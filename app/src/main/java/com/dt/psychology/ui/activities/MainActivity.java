@@ -1,23 +1,27 @@
 package com.dt.psychology.ui.activities;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.graphics.Color;
-import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dt.psychology.R;
+import com.dt.psychology.adapters.MainAtyFragmentPagerAdapter;
 import com.dt.psychology.dagger2.components.ActivityComponent;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;
 import com.dt.psychology.ui.fragments.PersonalFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
+
     @BindView(R.id.activity_main_tv_home)
     TextView tvHome;
     @BindView(R.id.activity_main_iv_home)
@@ -26,31 +30,53 @@ public class MainActivity extends BaseActivity {
     TextView tvDiscussion;
     @BindView(R.id.activity_main_iv_discussion)
     ImageView ivDiscussion;
-    @BindView(R.id.activity_main_tv_persional)
+    @BindView(R.id.activity_main_tv_personal)
     TextView tvPersonal;
     @BindView(R.id.activity_main_iv_personal)
     ImageView ivPersonal;
+    @BindView(R.id.activity_main_vp)
+    ViewPager vp;
 
-    private HomeFragment homeFragment;
-    private DiscussionFragment discussionFragment;
-    private PersonalFragment personalFragment;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    private List<Fragment> fragmentList;
 
     @Override
     protected void init() {
-        homeFragment = new HomeFragment();
-        discussionFragment = new DiscussionFragment();
-        personalFragment = new PersonalFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.activity_main_fl_container,homeFragment)
-                .add(R.id.activity_main_fl_container,discussionFragment)
-                .add(R.id.activity_main_fl_container,personalFragment)
-                .commit();
+        initFragmentList();
+        initViewPager();
         homeClick();
+    }
+
+    private void initFragmentList(){
+        fragmentList = new ArrayList<>();
+        fragmentList.add(new HomeFragment());
+        fragmentList.add(new DiscussionFragment());
+        fragmentList.add(new PersonalFragment());
+    }
+
+    private void initViewPager(){
+        MainAtyFragmentPagerAdapter vpAdapter = new MainAtyFragmentPagerAdapter(getSupportFragmentManager(),fragmentList);
+        vp.setAdapter(vpAdapter);
+        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        homeClick();
+                        break;
+                    case 1:
+                        discussionClick();
+                        break;
+                    case 2:
+                        personalClick();
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
     }
 
     @Override
@@ -64,23 +90,28 @@ public class MainActivity extends BaseActivity {
     }
 
     @OnClick({R.id.activity_main_tv_home,R.id.activity_main_iv_home})
-    public void homeClick(){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.hide(discussionFragment).hide(personalFragment).show(homeFragment).commit();
-        resetBottomColor(tvHome,ivHome,R.drawable.ic_home_checked);
+    public void homeClick() {
+        if (vp.getCurrentItem() != 0) {
+            vp.setCurrentItem(0);
+        }
+        resetBottomColor(tvHome, ivHome, R.drawable.ic_home_checked);
+        Log.e("memory", String.valueOf(Runtime.getRuntime().totalMemory() / 1024.0D / 1024));
+        showToast( String.valueOf(Runtime.getRuntime().totalMemory() / 1024.0D / 1024)+"M");
     }
 
     @OnClick({R.id.activity_main_tv_discussion,R.id.activity_main_iv_discussion})
     public void discussionClick(){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.hide(homeFragment).hide(personalFragment).show(discussionFragment).commit();
+        if (vp.getCurrentItem() != 1){
+            vp.setCurrentItem(1);
+        }
         resetBottomColor(tvDiscussion,ivDiscussion,R.drawable.ic_discuss_checked);
     }
 
-    @OnClick({R.id.activity_main_tv_persional,R.id.activity_main_iv_personal})
+    @OnClick({R.id.activity_main_tv_personal,R.id.activity_main_iv_personal})
     public void personalClick(){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.hide(discussionFragment).hide(homeFragment).show(personalFragment).commit();
+        if (vp.getCurrentItem() != 2 ){
+            vp.setCurrentItem(2);
+        }
         resetBottomColor(tvPersonal,ivPersonal,R.drawable.ic_personal_checked);
     }
 

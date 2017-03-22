@@ -6,4 +6,7 @@
 
     <color name="colorTextUnchecked">#666666</color>
     <color name="colorTextChecked">#1F62FF</color>
+    <color name="wholeBackground">#f8f8f8</color>
+
+    <color name="rippleDefaultColor">#E1E1E1</color>
 </resources>

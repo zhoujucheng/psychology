@@ -1,7 +1,9 @@
 package com.dt.psychology.dagger2.components;
 
 import com.dt.psychology.dagger2.modules.ActivityModule;
+import com.dt.psychology.dagger2.modules.FragmentModule;
 import com.dt.psychology.dagger2.scope.ActivityScope;
+import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.MainActivity;
 
 import dagger.Subcomponent;
@@ -13,5 +15,7 @@ import dagger.Subcomponent;
 @ActivityScope
 @Subcomponent(modules = ActivityModule.class)
 public interface ActivityComponent {
+    FragmentComponent plus(FragmentModule fragmentModule);
     void inject(MainActivity mainActivity);
+    void inject(ArticleActivity articleActivity);
 }

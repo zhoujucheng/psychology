@@ -7,19 +7,6 @@
     tools:context="com.dt.psychology.ui.activities.MainActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
-
-    <TextView
-        android:id="@+id/activity_main_tv_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="首页"
-        android:textSize="@dimen/text_size_middle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/activity_main_tv_discussion" />
-
     <TextView
         android:id="@+id/activity_main_tv_discussion"
         android:layout_width="wrap_content"
@@ -27,72 +14,86 @@
         android:text="讨论"
         android:textSize="@dimen/text_size_middle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/activity_main_tv_persional"
+        android:id="@+id/activity_main_tv_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
+        android:text="首页"
+        android:textSize="@dimen/text_size_middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/activity_main_tv_discussion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.4" />
+
+    <TextView
+        android:id="@+id/activity_main_tv_personal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="我的"
         android:textSize="@dimen/text_size_middle"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/activity_main_tv_discussion"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <ImageView
-        android:id="@+id/activity_main_iv_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/activity_main_tv_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/activity_main_iv_discussion"
-        app:srcCompat="@drawable/ic_home_unchecked" />
+        app:layout_constraintHorizontal_bias="0.6" />
 
     <ImageView
         android:id="@+id/activity_main_iv_discussion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_discuss_unchecked"
         app:layout_constraintBottom_toTopOf="@+id/activity_main_tv_discussion"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_discuss_unchecked" />
+        app:layout_constraintRight_toRightOf="@+id/activity_main_tv_discussion"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main_tv_discussion" />
+
+    <ImageView
+        android:id="@+id/activity_main_iv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_home_unchecked"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_tv_home"
+        app:layout_constraintRight_toRightOf="@+id/activity_main_tv_home"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main_tv_home" />
+
 
     <ImageView
         android:id="@+id/activity_main_iv_personal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/activity_main_tv_persional"
-        app:layout_constraintLeft_toRightOf="@+id/activity_main_iv_discussion"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_personal_unchecked" />
+        app:srcCompat="@drawable/ic_personal_unchecked"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_tv_personal"
+        app:layout_constraintRight_toRightOf="@+id/activity_main_tv_personal"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main_tv_personal" />
 
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginBottom="8dp"
         android:background="#e6d7d7"
         app:layout_constraintBottom_toTopOf="@+id/activity_main_iv_discussion"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/activity_main_fl_container"
+    <!--<FrameLayout-->
+        <!--android:id="@+id/activity_main_fl_container"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/view"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent">-->
+    <!--</FrameLayout>-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/activity_main_vp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"></android.support.v4.view.ViewPager>
 
 </android.support.constraint.ConstraintLayout>

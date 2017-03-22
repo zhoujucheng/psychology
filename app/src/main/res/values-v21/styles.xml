@@ -9,11 +9,12 @@
     </style>
 
     <style name="articleRcvItem">
-        <item name="android:background">@drawable/background_article_item</item>
+        <item name="android:background">@drawable/background_article_item_v21</item>
         <item name="android:layout_marginTop">6dp</item>
         <item name="android:layout_marginBottom">6dp</item>
         <item name="android:layout_marginLeft">6dp</item>
         <item name="android:layout_marginRight">6dp</item>
+        <item name="android:elevation">5dp</item>
         <item name="android:clickable">true</item>
     </style>
 </resources>

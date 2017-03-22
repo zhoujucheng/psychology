@@ -6,10 +6,10 @@ package com.dt.psychology.util;
 
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
-
+    private Thread.UncaughtExceptionHandler mHandler;
 
     public CrashHandler(){
-
+        mHandler = Thread.getDefaultUncaughtExceptionHandler();
     }
 
     @Override
