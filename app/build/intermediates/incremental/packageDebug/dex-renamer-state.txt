@@ -1,0 +1,7 @@
+#Sun Mar 26 20:13:20 CST 2017
+base.0=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_954d1be14b845342c23084915ebecad4b46be9e1
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_a07664dbbac443ce04c32bef507796cf36c5757e\\classes.dex
+base.1=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_a07664dbbac443ce04c32bef507796cf36c5757e
+file.0=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_954d1be14b845342c23084915ebecad4b46be9e1\\classes.dex

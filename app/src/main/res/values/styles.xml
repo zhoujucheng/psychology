@@ -10,10 +10,25 @@
 
     <style name="articleRcvItem">
         <item name="android:background">@drawable/background_article_item</item>
-        <item name="android:layout_marginTop">6dp</item>
-        <item name="android:layout_marginBottom">6dp</item>
-        <item name="android:layout_marginLeft">6dp</item>
-        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_marginTop">@dimen/articleRcvItemMargin</item>
+        <item name="android:layout_marginBottom">@dimen/articleRcvItemMargin</item>
+        <item name="android:layout_marginLeft">@dimen/articleRcvItemMargin</item>
+        <item name="android:layout_marginRight">@dimen/articleRcvItemMargin</item>
         <item name="android:clickable">true</item>
     </style>
+
+
+    
+    <style name="personalTexView">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="personalCsl">
+        <item name="android:background">@color/white</item>
+    </style>
+
 </resources>

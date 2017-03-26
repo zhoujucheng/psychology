@@ -1,0 +1,190 @@
+[
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_carousel.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\a9e31ecd3a41cbc0b8ef1d9bde15dfd9dad6011d\\output\\res\\layout\\view_carousel.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_discussion.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\fragment_discussion.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\article_rcv_item.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\article_rcv_item.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_personal.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\fragment_personal.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_article.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_article.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swipeback_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\e0b55073f9d90ecbf1364346a6e77647b6bc9b20\\output\\res\\layout\\swipeback_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\layout\\notification_template_icon_group.xml"
+    }
+]

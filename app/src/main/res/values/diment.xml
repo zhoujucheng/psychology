@@ -6,4 +6,10 @@
     <dimen name="text_size_middle">16sp</dimen>
     <dimen name="text_size_large_middle">20sp</dimen>
     <dimen name="text_size_large">22sp</dimen>
+
+    <dimen name="articleRcvItemMargin">6dp</dimen>
+
+    <dimen name="personalTextViewHeight">45dp</dimen>
+
+    <dimen name="defaultElevation">4dp</dimen>
 </resources>

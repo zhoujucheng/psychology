@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_family_ties.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_family_ties.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_love_marriage.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_love_marriage.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_career.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_career.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_growth.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_growth.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_social.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_social.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_sex.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_sex.png"
+    }
+]

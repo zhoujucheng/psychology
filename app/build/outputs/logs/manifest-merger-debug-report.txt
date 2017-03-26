@@ -1,0 +1,107 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:7:5-21:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] D:\solfware\android\AVD\.android\build-cache\f6f7cc8ac4b02d5425f3b054a728db476091df90\output\AndroidManifest.xml:9:5-20
+MERGED from [com.synnapps:carouselview:0.0.10] D:\solfware\android\AVD\.android\build-cache\a9e31ecd3a41cbc0b8ef1d9bde15dfd9dad6011d\output\AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support:appcompat-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\09e660b76d6623f325c9ddc769f8f8b43e2076d9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] D:\solfware\android\AVD\.android\build-cache\44c8d4581952988a0ca38fd8bf5dc96850385481\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] D:\solfware\android\AVD\.android\build-cache\0c145fdfa01e3ef62f44afe04c4f1ccb9f268fd3\output\AndroidManifest.xml:26:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] D:\solfware\android\AVD\.android\build-cache\a24b55896c8be2b85647b0e11c5871b47926be48\output\AndroidManifest.xml:9:5-20
+MERGED from [org.litepal.android:core:1.5.1] D:\solfware\android\AVD\.android\build-cache\5126dcba613e96660e28b00b905384e6bd9bfe25\output\AndroidManifest.xml:11:5-14:19
+MERGED from [me.imid.swipebacklayout.lib:library:1.0.0] D:\solfware\android\AVD\.android\build-cache\e0b55073f9d90ecbf1364346a6e77647b6bc9b20\output\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:support-v4:25.3.0] D:\solfware\android\AVD\.android\build-cache\fe80cca7f0f68bec27c470c1d4e82d40e50f8f8b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] D:\solfware\android\AVD\.android\build-cache\bbe9a6d3e42b6e5f3f2c666ed802024ab4e8bbe0\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] D:\solfware\android\AVD\.android\build-cache\09f9b00f22842f7e332844633f8247c70739b72a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] D:\solfware\android\AVD\.android\build-cache\7750efdb068ce62f3023d6a0214de72b7fa67fd3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] D:\solfware\android\AVD\.android\build-cache\d212c64b6a59092e4a036713175ca3f7bdb247a4\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.0] D:\solfware\android\AVD\.android\build-cache\3e88a9c749a46b9fab417a0d806f238a41c29415\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:12:9-35
+	android:allowBackup
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:9:9-35
+	android:icon
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:10:9-43
+	android:theme
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:13:9-40
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:8:9-41
+activity#com.dt.psychology.ui.activities.MainActivity
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:14:9-19:20
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:14:19-61
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:15:13-18:29
+action#android.intent.action.MAIN
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:17:27-74
+activity#com.dt.psychology.ui.activities.ArticleActivity
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:20:9-76
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:20:19-64
+uses-sdk
+INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] D:\solfware\android\AVD\.android\build-cache\f6f7cc8ac4b02d5425f3b054a728db476091df90\output\AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] D:\solfware\android\AVD\.android\build-cache\0138d15873c1bae6a903bc84c87ee10f0d7e275b\output\AndroidManifest.xml:19:5-43
+MERGED from [com.jakewharton:butterknife:8.5.1] D:\solfware\android\AVD\.android\build-cache\3d24ebfc04f80056477744ed024b4593d55593ce\output\AndroidManifest.xml:5:5-43
+MERGED from [com.synnapps:carouselview:0.0.10] D:\solfware\android\AVD\.android\build-cache\a9e31ecd3a41cbc0b8ef1d9bde15dfd9dad6011d\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\1ecbdafce42f3a4f328aa850aa58f54be211f4fa\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\09e660b76d6623f325c9ddc769f8f8b43e2076d9\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] D:\solfware\android\AVD\.android\build-cache\44c8d4581952988a0ca38fd8bf5dc96850385481\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] D:\solfware\android\AVD\.android\build-cache\0c145fdfa01e3ef62f44afe04c4f1ccb9f268fd3\output\AndroidManifest.xml:20:5-43
+MERGED from [de.hdodenhof:circleimageview:2.1.0] D:\solfware\android\AVD\.android\build-cache\a24b55896c8be2b85647b0e11c5871b47926be48\output\AndroidManifest.xml:5:5-7:41
+MERGED from [org.litepal.android:core:1.5.1] D:\solfware\android\AVD\.android\build-cache\5126dcba613e96660e28b00b905384e6bd9bfe25\output\AndroidManifest.xml:7:5-9:41
+MERGED from [me.imid.swipebacklayout.lib:library:1.0.0] D:\solfware\android\AVD\.android\build-cache\e0b55073f9d90ecbf1364346a6e77647b6bc9b20\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:25.3.0] D:\solfware\android\AVD\.android\build-cache\fe80cca7f0f68bec27c470c1d4e82d40e50f8f8b\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] D:\solfware\android\AVD\.android\build-cache\bbe9a6d3e42b6e5f3f2c666ed802024ab4e8bbe0\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] D:\solfware\android\AVD\.android\build-cache\09f9b00f22842f7e332844633f8247c70739b72a\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] D:\solfware\android\AVD\.android\build-cache\7750efdb068ce62f3023d6a0214de72b7fa67fd3\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] D:\solfware\android\AVD\.android\build-cache\d212c64b6a59092e4a036713175ca3f7bdb247a4\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.0] D:\solfware\android\AVD\.android\build-cache\3e88a9c749a46b9fab417a0d806f238a41c29415\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\09e660b76d6623f325c9ddc769f8f8b43e2076d9\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:recyclerview-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\1ecbdafce42f3a4f328aa850aa58f54be211f4fa\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\09e660b76d6623f325c9ddc769f8f8b43e2076d9\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] D:\solfware\android\AVD\.android\build-cache\44c8d4581952988a0ca38fd8bf5dc96850385481\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] D:\solfware\android\AVD\.android\build-cache\0c145fdfa01e3ef62f44afe04c4f1ccb9f268fd3\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.0] D:\solfware\android\AVD\.android\build-cache\fe80cca7f0f68bec27c470c1d4e82d40e50f8f8b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] D:\solfware\android\AVD\.android\build-cache\bbe9a6d3e42b6e5f3f2c666ed802024ab4e8bbe0\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] D:\solfware\android\AVD\.android\build-cache\09f9b00f22842f7e332844633f8247c70739b72a\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] D:\solfware\android\AVD\.android\build-cache\7750efdb068ce62f3023d6a0214de72b7fa67fd3\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] D:\solfware\android\AVD\.android\build-cache\d212c64b6a59092e4a036713175ca3f7bdb247a4\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.0] D:\solfware\android\AVD\.android\build-cache\3e88a9c749a46b9fab417a0d806f238a41c29415\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:recyclerview-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\1ecbdafce42f3a4f328aa850aa58f54be211f4fa\output\AndroidManifest.xml:24:9-31
+	android:name
+		ADDED from [com.android.support:recyclerview-v7:25.3.0] D:\solfware\android\AVD\.android\build-cache\1ecbdafce42f3a4f328aa850aa58f54be211f4fa\output\AndroidManifest.xml:23:9-47
