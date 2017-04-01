@@ -16,17 +16,17 @@ import java.lang.Override;
 public class HomeFragment_ViewBinding implements Unbinder {
   private HomeFragment target;
 
-  private View view2131427443;
+  private View view2131558555;
 
-  private View view2131427454;
+  private View view2131558566;
 
-  private View view2131427452;
+  private View view2131558564;
 
-  private View view2131427450;
+  private View view2131558562;
 
-  private View view2131427448;
+  private View view2131558560;
 
-  private View view2131427445;
+  private View view2131558557;
 
   @UiThread
   public HomeFragment_ViewBinding(final HomeFragment target, View source) {
@@ -36,7 +36,7 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.carouselView = Utils.findRequiredViewAsType(source, R.id.fragment_home_cv, "field 'carouselView'", CarouselView.class);
     target.ivPush = Utils.findRequiredViewAsType(source, R.id.fragment_home_iv_push, "field 'ivPush'", ImageView.class);
     view = Utils.findRequiredView(source, R.id.fragment_home_csl_growth, "method 'categoryClick'");
-    view2131427443 = view;
+    view2131558555 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -44,7 +44,7 @@ public class HomeFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_home_csl_career, "method 'categoryClick'");
-    view2131427454 = view;
+    view2131558566 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -52,7 +52,7 @@ public class HomeFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_home_csl_family, "method 'categoryClick'");
-    view2131427452 = view;
+    view2131558564 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -60,7 +60,7 @@ public class HomeFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_home_csl_love_marriage, "method 'categoryClick'");
-    view2131427450 = view;
+    view2131558562 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -68,19 +68,19 @@ public class HomeFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_home_csl_sex, "method 'categoryClick'");
-    view2131427448 = view;
+    view2131558560 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
         target.categoryClick();
       }
     });
-    view = Utils.findRequiredView(source, R.id.fragment_home_csl_social, "method 'categoryClick'");
-    view2131427445 = view;
+    view = Utils.findRequiredView(source, R.id.fragment_home_csl_social, "method 'signUpClick'");
+    view2131558557 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
-        target.categoryClick();
+        target.signUpClick();
       }
     });
   }
@@ -95,17 +95,17 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.carouselView = null;
     target.ivPush = null;
 
-    view2131427443.setOnClickListener(null);
-    view2131427443 = null;
-    view2131427454.setOnClickListener(null);
-    view2131427454 = null;
-    view2131427452.setOnClickListener(null);
-    view2131427452 = null;
-    view2131427450.setOnClickListener(null);
-    view2131427450 = null;
-    view2131427448.setOnClickListener(null);
-    view2131427448 = null;
-    view2131427445.setOnClickListener(null);
-    view2131427445 = null;
+    view2131558555.setOnClickListener(null);
+    view2131558555 = null;
+    view2131558566.setOnClickListener(null);
+    view2131558566 = null;
+    view2131558564.setOnClickListener(null);
+    view2131558564 = null;
+    view2131558562.setOnClickListener(null);
+    view2131558562 = null;
+    view2131558560.setOnClickListener(null);
+    view2131558560 = null;
+    view2131558557.setOnClickListener(null);
+    view2131558557 = null;
   }
 }

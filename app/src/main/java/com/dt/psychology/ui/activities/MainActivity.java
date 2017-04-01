@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.adapters.MainAtyFragmentPagerAdapter;
 import com.dt.psychology.dagger2.components.ActivityComponent;
@@ -37,28 +38,19 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.activity_main_vp)
     ViewPager vp;
 
-    private List<Fragment> fragmentList;
-
     @Override
     protected void init() {
-        initFragmentList();
         initViewPager();
         homeClick();
     }
 
-    private void initFragmentList(){
-        fragmentList = new ArrayList<>();
-        fragmentList.add(new HomeFragment());
-        fragmentList.add(new DiscussionFragment());
-        fragmentList.add(new PersonalFragment());
-    }
-
     private void initViewPager(){
-        MainAtyFragmentPagerAdapter vpAdapter = new MainAtyFragmentPagerAdapter(getSupportFragmentManager(),fragmentList);
+        MainAtyFragmentPagerAdapter vpAdapter = new MainAtyFragmentPagerAdapter(getSupportFragmentManager());
         vp.setAdapter(vpAdapter);
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
             @Override
             public void onPageSelected(int position) {
                 switch (position){

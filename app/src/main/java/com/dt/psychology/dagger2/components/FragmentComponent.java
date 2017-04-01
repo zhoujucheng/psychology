@@ -1,6 +1,7 @@
 package com.dt.psychology.dagger2.components;
 
 import com.dt.psychology.dagger2.modules.FragmentModule;
+import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;
 import com.dt.psychology.ui.fragments.PersonalFragment;
 
@@ -14,4 +15,5 @@ import dagger.Subcomponent;
 public interface FragmentComponent {
     void inject(HomeFragment homeFragment);
     void inject(PersonalFragment personalFragment);
+    void inject(DiscussionFragment discussionFragment);
 }

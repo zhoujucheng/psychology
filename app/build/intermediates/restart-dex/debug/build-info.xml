@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
     build-mode="FULL"
-    density="560dpi"
+    density="420dpi"
     format="10"
     plugin-version="2.3.0"
-    timestamp="1490530388305"
+    timestamp="1491022449377"
     token="6296609012472083976"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="5551" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="120" />
     <task
         name="verifier"
-        duration="0" />
+        duration="64" />
 
-    <artifact
-        location="D:\sources\andorid\Psychology\app\build\outputs\apk\app-debug.apk"
-        type="SPLIT_MAIN" />
     <artifact
         location="D:\sources\andorid\Psychology\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
+    <artifact
+        location="D:\sources\andorid\Psychology\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
         location="D:\sources\andorid\Psychology\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
@@ -62,14 +62,14 @@
 
     <build
         build-mode="FULL"
-        timestamp="1490530388305"
+        timestamp="1491022449377"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="D:\sources\andorid\Psychology\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="D:\sources\andorid\Psychology\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
+        <artifact
+            location="D:\sources\andorid\Psychology\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="D:\sources\andorid\Psychology\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />

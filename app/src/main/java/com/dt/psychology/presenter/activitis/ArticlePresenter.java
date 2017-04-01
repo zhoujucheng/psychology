@@ -8,4 +8,5 @@ import com.dt.psychology.ui.views.ArticleView;
  */
 
 public interface ArticlePresenter extends BasePresenter<ArticleView>{
+    public void test();
 }

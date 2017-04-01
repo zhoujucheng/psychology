@@ -1,12 +1,18 @@
 package com.dt.psychology.ui.fragments;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.dagger2.components.FragmentComponent;
 import com.dt.psychology.ui.activities.ArticleActivity;
+import com.dt.psychology.ui.activities.SignUpActivity;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -52,8 +58,14 @@ public class HomeFragment extends BaseFragment {
     }
 
     @OnClick({R.id.fragment_home_csl_growth,R.id.fragment_home_csl_career,R.id.fragment_home_csl_family,
-            R.id.fragment_home_csl_love_marriage,R.id.fragment_home_csl_sex,R.id.fragment_home_csl_social})
+            R.id.fragment_home_csl_love_marriage,R.id.fragment_home_csl_sex})
     public void categoryClick(){
         startActivity(ArticleActivity.class);
     }
+
+    @OnClick(R.id.fragment_home_csl_social)
+    public void signUpClick(){
+        startActivity(SignUpActivity.class);
+    }
+
 }

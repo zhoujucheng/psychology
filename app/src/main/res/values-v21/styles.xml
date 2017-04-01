@@ -1,13 +1,4 @@
 <resources>
-    <!-- Base application theme. -->
-    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
-        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">@color/colorAccent</item>-->
-        <!--<item name="android:windowIsTranslucent">true</item>-->
-    <!--</style>-->
-
     <style name="articleRcvItem">
         <item name="android:background">@drawable/background_article_item_v21</item>
         <item name="android:layout_marginTop">@dimen/articleRcvItemMargin</item>

@@ -3,15 +3,19 @@ package com.dt.psychology.ui.activities;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.dt.psychology.R;
 import com.dt.psychology.adapters.ArticleRcvAdapter;
 import com.dt.psychology.dagger2.components.ActivityComponent;
 import com.dt.psychology.domain.Article;
+import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.ui.views.ArticleView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 
@@ -19,6 +23,9 @@ public class ArticleActivity extends BaseSwipeBackActivity implements ArticleVie
 
     @BindView(R.id.activity_article_rcv)
     RecyclerView rcv;
+
+    @Inject
+    ArticlePresenter articlePresenter;
 
     @Override
     protected void init() {
@@ -32,6 +39,9 @@ public class ArticleActivity extends BaseSwipeBackActivity implements ArticleVie
         ArticleRcvAdapter adapter = new ArticleRcvAdapter(articleList);
         rcv.setAdapter(adapter);
         rcv.setLayoutManager(new LinearLayoutManager(this));
+        articlePresenter.attachView(this);
+        articlePresenter.test();
+        Log.e("activity",toString());
     }
 
     @Override

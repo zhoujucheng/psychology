@@ -285,6 +285,9 @@
         <item name="android:textColor">@color/secondary_text_default_material_light</item>
         <item name="android:textSize">@dimen/notification_action_text_size</item>
     </style>
+    <style name="Widget.Design.AppBarLayout" parent="Base.Widget.Design.AppBarLayout">
+        <item name="android:stateListAnimator">@animator/design_appbar_state_list_animator</item>
+    </style>
     <style name="articleRcvItem">
         <item name="android:background">@drawable/background_article_item_v21</item>
         <item name="android:layout_marginTop">@dimen/articleRcvItemMargin</item>
@@ -294,6 +297,8 @@
         <item name="android:elevation">@dimen/defaultElevation</item>
         <item name="android:clickable">true</item>
     </style>
+    <style name="leak_canary_LeakCanary.Base" parent="android:Theme.Material">
+  </style>
     <style name="personalCsl">
         <item name="android:background">@color/white</item>
         <item name="android:elevation">@dimen/defaultElevation</item>

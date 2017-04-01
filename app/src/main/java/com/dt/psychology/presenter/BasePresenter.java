@@ -7,4 +7,5 @@ import com.dt.psychology.ui.views.BaseView;
  */
 
 public interface BasePresenter<T extends BaseView> {
+    void attachView(T view);
 }

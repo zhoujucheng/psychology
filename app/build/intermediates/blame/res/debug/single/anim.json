@@ -1,42 +1,66 @@
 [
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\anim\\design_fab_out.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_fade_out.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_popup_exit.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_slide_out_top.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_popup_enter.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_slide_in_top.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\anim\\design_fab_in.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\09e660b76d6623f325c9ddc769f8f8b43e2076d9\\output\\res\\anim\\abc_fade_in.xml"
+        "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\anim\\abc_fade_in.xml"
     }
 ]

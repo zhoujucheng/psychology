@@ -14,10 +14,12 @@
         <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.ArticleActivity"></activity>
+        <activity android:name=".ui.activities.ArticleActivity" />
+        <activity android:name=".ui.activities.SignUpActivity"></activity>
     </application>
 
 </manifest>

@@ -1,14 +1,12 @@
 package com.dt.psychology.domain;
 
-import org.litepal.crud.DataSupport;
-
 import java.io.Serializable;
 
 /**
  * Created by dnnt9 on 2017/3/20.
  */
 
-public class Article extends DataSupport implements Serializable{
+public class Article implements Serializable{
     private String title;
     private String author;
     private String content;

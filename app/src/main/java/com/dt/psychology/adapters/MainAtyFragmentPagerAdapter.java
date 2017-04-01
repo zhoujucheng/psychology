@@ -4,6 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.dt.psychology.ui.fragments.DiscussionFragment;
+import com.dt.psychology.ui.fragments.HomeFragment;
+import com.dt.psychology.ui.fragments.PersonalFragment;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,9 +18,12 @@ import java.util.List;
 public class MainAtyFragmentPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragmentList;
 
-    public MainAtyFragmentPagerAdapter(FragmentManager fm,List<Fragment> fragmentList) {
+    public MainAtyFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
-        mFragmentList = fragmentList;
+        mFragmentList = new ArrayList<>();
+        mFragmentList.add(new HomeFragment());
+        mFragmentList.add(new DiscussionFragment());
+        mFragmentList.add(new PersonalFragment());
     }
 
     @Override

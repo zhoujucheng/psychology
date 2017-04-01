@@ -4,13 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.dt.psychology.dagger2.components.ActivityComponent;
 import com.dt.psychology.dagger2.modules.ActivityModule;
+import com.dt.psychology.presenter.BasePresenter;
 import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.views.BaseView;
 import com.dt.psychology.util.ToastUtil;
+
+import java.util.concurrent.ExecutorService;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
@@ -27,20 +33,23 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         ButterKnife.bind(this);
-        inject(getActivityComponent());
+        mActivityComponent = ((MyApplication)getApplication()).getAppComponent().plus(new ActivityModule(this));
+        inject(mActivityComponent);
         init();
     }
 
     public ActivityComponent getActivityComponent(){
-        if (mActivityComponent == null){
-            mActivityComponent = ((MyApplication)getApplication()).getAppComponent().plus(new ActivityModule());
-        }
         return mActivityComponent;
     }
 
     @Override
     public void showToast(String text) {
         ToastUtil.showToast(this,text);
+    }
+
+    @Override
+    public Context getContext(){
+        return this;
     }
 
     public void startActivity(Class<?> cls){

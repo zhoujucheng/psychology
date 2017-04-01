@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.dt.psychology.dagger2.components.FragmentComponent;
 import com.dt.psychology.dagger2.modules.FragmentModule;
 import com.dt.psychology.ui.activities.BaseActivity;
+import com.dt.psychology.util.ToastUtil;
 
 import butterknife.ButterKnife;
 
@@ -40,6 +41,10 @@ public abstract class BaseFragment extends Fragment {
             mFragmentComponent = ((BaseActivity)getActivity()).getActivityComponent().plus(new FragmentModule());
         }
         return mFragmentComponent;
+    }
+
+    public void showToast(String text) {
+        ToastUtil.showToast(getContext(),text);
     }
 
     public void startActivity(Class<?> cls){

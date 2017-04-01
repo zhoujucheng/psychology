@@ -1,5 +1,6 @@
 package com.dt.psychology.dagger2.modules;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.dt.psychology.test.Sevice;
@@ -7,6 +8,9 @@ import com.dt.psychology.ui.MyApplication;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 import javax.inject.Singleton;
 
@@ -33,7 +37,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    MyApplication provideApplication(){
+    MyApplication provideMyApplication(){
         return  mApplication;
     }
 
@@ -71,9 +75,15 @@ public class AppModule {
     }
 
     @Provides
+    @Singleton
+    ExecutorService provideExecutorService(){
+        return Executors.newCachedThreadPool();
+    }
+
+    @Provides
+    @Singleton
     Sevice provideSevice(Retrofit retrofit){
         return retrofit.create(Sevice.class);
     }
-
 
 }
