@@ -5,19 +5,32 @@ import android.content.Context;
 import com.dt.psychology.dagger2.modules.ActivityModule;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideActivityContextFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticlePresenterImplFactory;
+import com.dt.psychology.dagger2.modules.ActivityModule_ProvideLoginPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.AppModule;
+import com.dt.psychology.dagger2.modules.AppModule_ProvideDaoSessionFactory;
+import com.dt.psychology.dagger2.modules.AppModule_ProvideExecutorServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideOkHttpClientFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideRetrofitFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideSeviceFactory;
+import com.dt.psychology.dagger2.modules.AppModule_ProvideUserServiceFactory;
 import com.dt.psychology.dagger2.modules.FragmentModule;
+import com.dt.psychology.domain.DaoSession;
+import com.dt.psychology.network.UserService;
 import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl_MembersInjector;
+import com.dt.psychology.presenter.activitis.LoginPresenter;
+import com.dt.psychology.presenter.activitis.LoginPresenterImpl;
+import com.dt.psychology.presenter.activitis.LoginPresenterImpl_Factory;
+import com.dt.psychology.presenter.activitis.LoginPresenterImpl_MembersInjector;
 import com.dt.psychology.test.Sevice;
 import com.dt.psychology.ui.MyApplication;
+import com.dt.psychology.ui.MyApplication_MembersInjector;
 import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.ArticleActivity_MembersInjector;
+import com.dt.psychology.ui.activities.LoginActivity;
+import com.dt.psychology.ui.activities.LoginActivity_MembersInjector;
 import com.dt.psychology.ui.activities.MainActivity;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;
@@ -26,16 +39,25 @@ import dagger.MembersInjector;
 import dagger.internal.DoubleCheck;
 import dagger.internal.MembersInjectors;
 import dagger.internal.Preconditions;
+import java.util.concurrent.ExecutorService;
 import javax.inject.Provider;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
 public final class DaggerAppComponent implements AppComponent {
+  private Provider<ExecutorService> provideExecutorServiceProvider;
+
+  private Provider<DaoSession> provideDaoSessionProvider;
+
+  private MembersInjector<MyApplication> myApplicationMembersInjector;
+
   private Provider<OkHttpClient> provideOkHttpClientProvider;
 
   private Provider<Retrofit> provideRetrofitProvider;
 
   private Provider<Sevice> provideSeviceProvider;
+
+  private Provider<UserService> provideUserServiceProvider;
 
   private DaggerAppComponent(Builder builder) {
     assert builder != null;
@@ -49,6 +71,16 @@ public final class DaggerAppComponent implements AppComponent {
   @SuppressWarnings("unchecked")
   private void initialize(final Builder builder) {
 
+    this.provideExecutorServiceProvider =
+        DoubleCheck.provider(AppModule_ProvideExecutorServiceFactory.create(builder.appModule));
+
+    this.provideDaoSessionProvider =
+        DoubleCheck.provider(AppModule_ProvideDaoSessionFactory.create(builder.appModule));
+
+    this.myApplicationMembersInjector =
+        MyApplication_MembersInjector.create(
+            provideExecutorServiceProvider, provideDaoSessionProvider);
+
     this.provideOkHttpClientProvider =
         DoubleCheck.provider(AppModule_ProvideOkHttpClientFactory.create(builder.appModule));
 
@@ -60,11 +92,15 @@ public final class DaggerAppComponent implements AppComponent {
     this.provideSeviceProvider =
         DoubleCheck.provider(
             AppModule_ProvideSeviceFactory.create(builder.appModule, provideRetrofitProvider));
+
+    this.provideUserServiceProvider =
+        DoubleCheck.provider(
+            AppModule_ProvideUserServiceFactory.create(builder.appModule, provideRetrofitProvider));
   }
 
   @Override
   public void inject(MyApplication myApplication) {
-    MembersInjectors.<MyApplication>noOp().injectMembers(myApplication);
+    myApplicationMembersInjector.injectMembers(myApplication);
   }
 
   @Override
@@ -103,6 +139,14 @@ public final class DaggerAppComponent implements AppComponent {
 
     private MembersInjector<ArticleActivity> articleActivityMembersInjector;
 
+    private MembersInjector<LoginPresenterImpl> loginPresenterImplMembersInjector;
+
+    private Provider<LoginPresenterImpl> loginPresenterImplProvider;
+
+    private Provider<LoginPresenter> provideLoginPresenterImplProvider;
+
+    private MembersInjector<LoginActivity> loginActivityMembersInjector;
+
     private ActivityComponentImpl(ActivityModule activityModule) {
       this.activityModule = Preconditions.checkNotNull(activityModule);
       initialize();
@@ -128,6 +172,21 @@ public final class DaggerAppComponent implements AppComponent {
 
       this.articleActivityMembersInjector =
           ArticleActivity_MembersInjector.create(provideArticlePresenterImplProvider);
+
+      this.loginPresenterImplMembersInjector =
+          LoginPresenterImpl_MembersInjector.create(
+              DaggerAppComponent.this.provideUserServiceProvider);
+
+      this.loginPresenterImplProvider =
+          LoginPresenterImpl_Factory.create(loginPresenterImplMembersInjector);
+
+      this.provideLoginPresenterImplProvider =
+          DoubleCheck.provider(
+              ActivityModule_ProvideLoginPresenterImplFactory.create(
+                  activityModule, loginPresenterImplProvider));
+
+      this.loginActivityMembersInjector =
+          LoginActivity_MembersInjector.create(provideLoginPresenterImplProvider);
     }
 
     @Override
@@ -138,6 +197,11 @@ public final class DaggerAppComponent implements AppComponent {
     @Override
     public void inject(ArticleActivity articleActivity) {
       articleActivityMembersInjector.injectMembers(articleActivity);
+    }
+
+    @Override
+    public void inject(LoginActivity loginActivity) {
+      loginActivityMembersInjector.injectMembers(loginActivity);
     }
 
     @Override

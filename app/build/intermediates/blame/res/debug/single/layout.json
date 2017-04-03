@@ -40,6 +40,10 @@
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
@@ -94,6 +98,10 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\question_rcv_item.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\question_rcv_item.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",

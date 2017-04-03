@@ -1,6 +1,9 @@
 package com.dt.psychology.ui.activities;
 
+import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.Button;
 
 import com.dt.psychology.R;
@@ -15,14 +18,15 @@ public class SignUpActivity extends BaseActivity {
     Button btnValidateCode;
 
     @Override
-    protected void init() {
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
-    protected void inject(ActivityComponent activityComponent) {
+    protected void init() {}
 
-    }
+    @Override
+    protected void inject(ActivityComponent activityComponent) {}
 
     @Override
     protected int getContentView() {
@@ -30,7 +34,10 @@ public class SignUpActivity extends BaseActivity {
     }
 
     @OnClick(R.id.activity_sign_up_btn_validate_code)
-    public void getValidateCodeClick(){
+    public void getValidateCodeClick(final View view){
+        if (!view.isClickable())    return;
+        view.setClickable(false);
+        view.setBackgroundColor(ContextCompat.getColor(this,R.color.rippleDefaultColor));
         Runnable runnable = new Runnable() {
             private int countDown = 60;
             @Override
@@ -41,11 +48,18 @@ public class SignUpActivity extends BaseActivity {
                     new Handler().postDelayed(this,1000);
                     countDown--;
                 }else {
+                    view.setClickable(true);
+                    view.setBackgroundColor(ContextCompat.getColor(SignUpActivity.this,R.color.buttonBackground));
                     btnValidateCode.setText("获取验证码");
                 }
             }
         };
         new Handler().post(runnable);
+    }
+
+    @OnClick(R.id.activity_sign_up_back)
+    public void backClick(){
+        onBackPressed();
     }
 
 }

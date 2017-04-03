@@ -3,9 +3,14 @@ package com.dt.psychology.dagger2.modules;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.dt.psychology.domain.DaoMaster;
+import com.dt.psychology.domain.DaoSession;
+import com.dt.psychology.network.UserService;
 import com.dt.psychology.test.Sevice;
 import com.dt.psychology.ui.MyApplication;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
+import org.greenrobot.greendao.database.Database;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -78,6 +83,21 @@ public class AppModule {
     @Singleton
     ExecutorService provideExecutorService(){
         return Executors.newCachedThreadPool();
+    }
+
+    @Provides
+    @Singleton
+    DaoSession provideDaoSession(){
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(mApplication,"accompany");
+        Database db = helper.getWritableDb();
+        DaoSession daoSession = new DaoMaster(db).newSession();
+        return daoSession;
+    }
+
+    @Provides
+    @Singleton
+    UserService provideUserService(Retrofit retrofit){
+        return retrofit.create(UserService.class);
     }
 
     @Provides

@@ -20,11 +20,11 @@ import java.util.List;
 
 public class ArticleRcvAdapter extends RecyclerView.Adapter<ArticleRcvAdapter.ArticleItemViewHolder> {
 
-    private List<Article> mArticleList;
+    private List<Article> articles;
 
-    public ArticleRcvAdapter(List<Article> articleList){
-        mArticleList = articleList;
-        if(mArticleList == null)    mArticleList = new ArrayList<>();
+    public ArticleRcvAdapter(List<Article> articles){
+        if (articles == null) articles = new ArrayList<>();
+        this.articles = articles;
     }
 
     @Override
@@ -35,15 +35,15 @@ public class ArticleRcvAdapter extends RecyclerView.Adapter<ArticleRcvAdapter.Ar
 
     @Override
     public void onBindViewHolder(ArticleItemViewHolder holder, int position) {
-        Article article = mArticleList.get(position);
+        Article article = articles.get(position);
         ImageView iv = holder.iv;
-        Glide.with(iv.getContext()).load(article.getImageUrl()).into(iv);
-        holder.tv.setText(article.getBrief());
+//        Glide.with(iv.getContext()).load(article.getImageUrl()).into(iv);
+//        holder.tv.setText(article.getBrief());
     }
 
     @Override
     public int getItemCount() {
-        return mArticleList.size();
+        return articles.size();
     }
 
     class ArticleItemViewHolder extends RecyclerView.ViewHolder{

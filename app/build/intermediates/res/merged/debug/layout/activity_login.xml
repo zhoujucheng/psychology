@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    tools:context="com.dt.psychology.ui.activities.LoginActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/activity_login_til_phone_email"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.43">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/activity_login_tiedt_phone_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="手机/邮箱" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="@dimen/little_icon_size"
+        android:layout_height="@dimen/little_icon_size"
+        app:srcCompat="@drawable/phone"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_login_til_phone_email"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="@+id/activity_login_til_phone_email"
+        android:layout_marginTop="0dp"
+        app:layout_constraintRight_toLeftOf="@+id/activity_login_til_phone_email"
+        android:layout_marginRight="0dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/activity_login_til_password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_login_til_phone_email"
+        app:layout_constraintRight_toRightOf="@+id/activity_login_til_phone_email"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_til_phone_email">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/activity_login_tiedt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="@dimen/little_icon_size"
+        android:layout_height="@dimen/little_icon_size"
+        app:srcCompat="@drawable/password"
+        app:layout_constraintRight_toLeftOf="@+id/activity_login_til_password"
+        android:layout_marginRight="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_login_til_password"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="@+id/activity_login_til_password"
+        android:layout_marginTop="0dp" />
+
+    <Button
+        android:id="@+id/activity_login_btn_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="#6190ff"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_middle"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.19999999"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_til_password" />
+
+    <TextView
+        android:id="@+id/activity_login_tv_look_around"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="随便看看"
+        android:textColor="@color/buttonBackground"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_btn_login"
+        android:layout_marginRight="72dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_login_btn_login" />
+
+    <TextView
+        android:id="@+id/activity_login_tv_forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="忘记密码?"
+        android:textColor="@color/buttonBackground"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_tv_look_around" />
+
+    <TextView
+        android:id="@+id/activity_login_tv_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="0dp"
+        android:text="注册"
+        android:textColor="@color/buttonBackground"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_login_btn_login"
+        app:layout_constraintTop_toTopOf="@+id/activity_login_tv_look_around" />
+
+</android.support.constraint.ConstraintLayout>

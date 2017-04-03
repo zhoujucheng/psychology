@@ -32,8 +32,8 @@ public class ArticleActivity extends BaseSwipeBackActivity implements ArticleVie
         List<Article> articleList = new ArrayList<>();
         for (int i =0;i<10;i++){
             Article article = new Article();
-            article.setBrief("测试");
-            article.setImageUrl("http://article.fd.zol-img.com.cn/t_s500x2000/g1/M07/0C/0D/Cg-4jVOpQWmIVPnYAAHFv0U3gXkAAOjOwAtyyUAAcXX661.jpg");
+//            article.setBrief("测试");
+//            article.setImageUrl("http://article.fd.zol-img.com.cn/t_s500x2000/g1/M07/0C/0D/Cg-4jVOpQWmIVPnYAAHFv0U3gXkAAOjOwAtyyUAAcXX661.jpg");
             articleList.add(article);
         }
         ArticleRcvAdapter adapter = new ArticleRcvAdapter(articleList);
@@ -41,7 +41,7 @@ public class ArticleActivity extends BaseSwipeBackActivity implements ArticleVie
         rcv.setLayoutManager(new LinearLayoutManager(this));
         articlePresenter.attachView(this);
         articlePresenter.test();
-        Log.e("activity",toString());
+//        Log.e("activity",toString());
     }
 
     @Override

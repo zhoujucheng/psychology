@@ -44,7 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     @Override
     public void showToast(String text) {
-        ToastUtil.showToast(this,text);
+        ToastUtil.showToast(getApplicationContext(),text);
     }
 
     @Override
@@ -52,8 +52,19 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         return this;
     }
 
+    @Override
+    public MyApplication getMyApplication(){
+        return (MyApplication)getApplication();
+    }
+
+    @Override
     public void startActivity(Class<?> cls){
         startActivity(new Intent(this,cls));
+    }
+
+    @Override
+    public void activityFinish(){
+        finish();
     }
 
     protected abstract void init();

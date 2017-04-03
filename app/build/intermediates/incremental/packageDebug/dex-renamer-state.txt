@@ -1,4 +1,4 @@
-#Fri Mar 31 23:55:43 CST 2017
+#Mon Apr 03 16:23:34 CST 2017
 base.0=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_954d1be14b845342c23084915ebecad4b46be9e1
 renamed.1=classes2.dex
 renamed.0=classes.dex

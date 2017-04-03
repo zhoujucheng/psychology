@@ -6,6 +6,8 @@ import android.content.Context;
 import com.dt.psychology.dagger2.scope.ActivityScope;
 import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
+import com.dt.psychology.presenter.activitis.LoginPresenter;
+import com.dt.psychology.presenter.activitis.LoginPresenterImpl;
 
 import dagger.Module;
 import dagger.Provides;
@@ -32,5 +34,11 @@ public class ActivityModule {
     @ActivityScope
     public ArticlePresenter provideArticlePresenterImpl(ArticlePresenterImpl articlePresenter){
         return articlePresenter;
+    }
+
+    @Provides
+    @ActivityScope
+    public LoginPresenter provideLoginPresenterImpl(LoginPresenterImpl loginPresenter){
+        return loginPresenter;
     }
 }

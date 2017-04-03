@@ -1,9 +1,11 @@
 package com.dt.psychology.ui.fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -45,6 +47,11 @@ public class HomeFragment extends BaseFragment {
             }
         });
         Glide.with(this).load(R.drawable.img3).into(ivPush);
+//        AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+//                .setTitle("test")
+//                .create();
+//                alertDialog.setCanceledOnTouchOutside(false);
+//        alertDialog.show();
     }
 
     @Override

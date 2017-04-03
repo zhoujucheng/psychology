@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\back.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\back.png"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_home_family_ties.png",
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_home_family_ties.png"
     },

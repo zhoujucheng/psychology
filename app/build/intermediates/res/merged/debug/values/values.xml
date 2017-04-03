@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="category_sort">
+        <item>按时间排序</item>
+        <item>按回答数排序</item>
+    </string-array>
     <attr format="reference" name="SwipeBackLayoutStyle"/>
     <attr format="boolean" name="animateOnBoundary"/>
     <attr format="boolean" name="autoPlay"/>
@@ -593,6 +597,7 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="little_icon_size">30dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>

@@ -3,6 +3,7 @@ package com.dt.psychology.ui.activities;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class MainActivity extends BaseActivity {
     protected void init() {
         initViewPager();
         homeClick();
+
     }
 
     private void initViewPager(){
@@ -96,6 +98,8 @@ public class MainActivity extends BaseActivity {
         if (vp.getCurrentItem() != 1){
             vp.setCurrentItem(1);
         }
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        showToast(String.valueOf(metrics.density)+" , "+String.valueOf(metrics.xdpi)+", "+String.valueOf(metrics.ydpi));
         resetBottomColor(tvDiscussion,ivDiscussion,R.drawable.ic_discuss_checked);
     }
 
