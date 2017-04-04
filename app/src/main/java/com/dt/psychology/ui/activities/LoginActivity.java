@@ -1,11 +1,13 @@
 package com.dt.psychology.ui.activities;
 
+import android.content.IntentFilter;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.dt.psychology.R;
+import com.dt.psychology.components.NetworkChangeReceiver;
 import com.dt.psychology.dagger2.components.ActivityComponent;
 import com.dt.psychology.presenter.activitis.LoginPresenter;
 import com.dt.psychology.ui.views.LoginView;

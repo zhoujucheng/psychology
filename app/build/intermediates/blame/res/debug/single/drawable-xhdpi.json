@@ -4,16 +4,44 @@
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\ic_home_unchecked.png"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\my_collections.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\my_collections.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\placeholder.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\placeholder.png"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_personal_checked.png",
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\ic_personal_checked.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\my_questions.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\my_questions.png"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_discuss_checked.png",
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\ic_discuss_checked.png"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\my_discussions.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\my_discussions.png"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_discuss_unchecked.png",
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\ic_discuss_unchecked.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\search.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\search.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\settings.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\settings.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\feedback.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\feedback.png"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_personal_unchecked.png",
@@ -22,5 +50,9 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_home_checked.png",
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\ic_home_checked.png"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\head_placeholder.png",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable-xhdpi\\head_placeholder.png"
     }
 ]

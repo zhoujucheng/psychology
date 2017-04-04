@@ -10,6 +10,7 @@ import com.dt.psychology.ui.MyApplication;
 
 public interface BaseView {
     void showToast(String text);
+    void showToast(int id);
     Context getContext();
     MyApplication getMyApplication();
     void startActivity(Class<?> cls);

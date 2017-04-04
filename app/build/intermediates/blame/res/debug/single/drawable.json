@@ -104,6 +104,10 @@
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_search.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\drawable\\background_search.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },

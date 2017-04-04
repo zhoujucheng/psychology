@@ -4,6 +4,7 @@ package com.dt.psychology.ui.fragments;
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
+import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.dt.psychology.R;
@@ -19,6 +20,7 @@ public class PersonalFragment_ViewBinding implements Unbinder {
     this.target = target;
 
     target.cciv = Utils.findRequiredViewAsType(source, R.id.fragment_personal_cciv_head, "field 'cciv'", CircleImageView.class);
+    target.tvEditData = Utils.findRequiredViewAsType(source, R.id.fragment_personal_edit_data, "field 'tvEditData'", TextView.class);
   }
 
   @Override
@@ -29,5 +31,6 @@ public class PersonalFragment_ViewBinding implements Unbinder {
     this.target = null;
 
     target.cciv = null;
+    target.tvEditData = null;
   }
 }

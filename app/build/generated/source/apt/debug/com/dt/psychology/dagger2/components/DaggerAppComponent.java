@@ -2,6 +2,9 @@
 package com.dt.psychology.dagger2.components;
 
 import android.content.Context;
+import com.dt.psychology.components.NetworkChangeReceiver;
+import com.dt.psychology.components.NetworkChangeReceiver_Factory;
+import com.dt.psychology.components.NetworkChangeReceiver_MembersInjector;
 import com.dt.psychology.dagger2.modules.ActivityModule;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideActivityContextFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticlePresenterImplFactory;
@@ -27,11 +30,14 @@ import com.dt.psychology.presenter.activitis.LoginPresenterImpl_MembersInjector;
 import com.dt.psychology.test.Sevice;
 import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.MyApplication_MembersInjector;
+import com.dt.psychology.ui.activities.AnswersActivity;
 import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.ArticleActivity_MembersInjector;
+import com.dt.psychology.ui.activities.ArticleDetailActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.LoginActivity_MembersInjector;
 import com.dt.psychology.ui.activities.MainActivity;
+import com.dt.psychology.ui.activities.MainActivity_MembersInjector;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;
 import com.dt.psychology.ui.fragments.PersonalFragment;
@@ -55,9 +61,9 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<Retrofit> provideRetrofitProvider;
 
-  private Provider<Sevice> provideSeviceProvider;
-
   private Provider<UserService> provideUserServiceProvider;
+
+  private Provider<Sevice> provideSeviceProvider;
 
   private DaggerAppComponent(Builder builder) {
     assert builder != null;
@@ -89,13 +95,13 @@ public final class DaggerAppComponent implements AppComponent {
             AppModule_ProvideRetrofitFactory.create(
                 builder.appModule, provideOkHttpClientProvider));
 
-    this.provideSeviceProvider =
-        DoubleCheck.provider(
-            AppModule_ProvideSeviceFactory.create(builder.appModule, provideRetrofitProvider));
-
     this.provideUserServiceProvider =
         DoubleCheck.provider(
             AppModule_ProvideUserServiceFactory.create(builder.appModule, provideRetrofitProvider));
+
+    this.provideSeviceProvider =
+        DoubleCheck.provider(
+            AppModule_ProvideSeviceFactory.create(builder.appModule, provideRetrofitProvider));
   }
 
   @Override
@@ -129,6 +135,12 @@ public final class DaggerAppComponent implements AppComponent {
   private final class ActivityComponentImpl implements ActivityComponent {
     private final ActivityModule activityModule;
 
+    private MembersInjector<NetworkChangeReceiver> networkChangeReceiverMembersInjector;
+
+    private Provider<NetworkChangeReceiver> networkChangeReceiverProvider;
+
+    private MembersInjector<MainActivity> mainActivityMembersInjector;
+
     private Provider<Context> provideActivityContextProvider;
 
     private MembersInjector<ArticlePresenterImpl> articlePresenterImplMembersInjector;
@@ -154,6 +166,16 @@ public final class DaggerAppComponent implements AppComponent {
 
     @SuppressWarnings("unchecked")
     private void initialize() {
+
+      this.networkChangeReceiverMembersInjector =
+          NetworkChangeReceiver_MembersInjector.create(
+              DaggerAppComponent.this.provideUserServiceProvider);
+
+      this.networkChangeReceiverProvider =
+          NetworkChangeReceiver_Factory.create(networkChangeReceiverMembersInjector);
+
+      this.mainActivityMembersInjector =
+          MainActivity_MembersInjector.create(networkChangeReceiverProvider);
 
       this.provideActivityContextProvider =
           DoubleCheck.provider(ActivityModule_ProvideActivityContextFactory.create(activityModule));
@@ -191,7 +213,7 @@ public final class DaggerAppComponent implements AppComponent {
 
     @Override
     public void inject(MainActivity mainActivity) {
-      MembersInjectors.<MainActivity>noOp().injectMembers(mainActivity);
+      mainActivityMembersInjector.injectMembers(mainActivity);
     }
 
     @Override
@@ -202,6 +224,16 @@ public final class DaggerAppComponent implements AppComponent {
     @Override
     public void inject(LoginActivity loginActivity) {
       loginActivityMembersInjector.injectMembers(loginActivity);
+    }
+
+    @Override
+    public void inject(AnswersActivity answersActivity) {
+      MembersInjectors.<AnswersActivity>noOp().injectMembers(answersActivity);
+    }
+
+    @Override
+    public void inject(ArticleDetailActivity articleDetailActivity) {
+      MembersInjectors.<ArticleDetailActivity>noOp().injectMembers(articleDetailActivity);
     }
 
     @Override

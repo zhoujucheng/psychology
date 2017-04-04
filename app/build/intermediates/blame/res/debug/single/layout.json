@@ -4,6 +4,10 @@
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\layout\\design_layout_tab_text.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_article_detail.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_article_detail.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
@@ -168,6 +172,10 @@
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\select_dialog_item_material.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_answers.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_answers.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
@@ -206,6 +214,10 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_personal.xml",
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\fragment_personal.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\answer_rcv_item.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\answer_rcv_item.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_article.xml",

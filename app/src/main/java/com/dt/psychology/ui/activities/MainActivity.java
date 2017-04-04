@@ -1,5 +1,6 @@
 package com.dt.psychology.ui.activities;
 
+import android.content.IntentFilter;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.adapters.MainAtyFragmentPagerAdapter;
+import com.dt.psychology.components.NetworkChangeReceiver;
 import com.dt.psychology.dagger2.components.ActivityComponent;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;
@@ -18,6 +20,8 @@ import com.dt.psychology.ui.fragments.PersonalFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,11 +43,16 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.activity_main_vp)
     ViewPager vp;
 
+    @Inject
+    NetworkChangeReceiver networkChangeReceiver;
+
     @Override
     protected void init() {
         initViewPager();
         homeClick();
-
+        IntentFilter netFilter = new IntentFilter();
+        netFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        registerReceiver(networkChangeReceiver,netFilter);
     }
 
     private void initViewPager(){
@@ -120,5 +129,11 @@ public class MainActivity extends BaseActivity {
         ivPersonal.setImageResource(R.drawable.ic_personal_unchecked);
         tv.setTextColor(ContextCompat.getColor(this,R.color.colorTextChecked));
         iv.setImageResource(drawableId);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(networkChangeReceiver);
     }
 }

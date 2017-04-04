@@ -1,6 +1,9 @@
 package com.dt.psychology.adapters;
 
+import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,7 @@ import android.widget.TextView;
 
 import com.dt.psychology.R;
 import com.dt.psychology.domain.Question;
+import com.dt.psychology.ui.activities.AnswersActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +45,12 @@ public class QuestionRcvAdapter extends RecyclerView.Adapter<QuestionRcvAdapter.
         holder.tvTitle.setText("如何改善人际互动模式");
         holder.tvTag.setText("工作与生活平衡 职场人际 职场压力");
         holder.tvAnswerCount.setText("1");
+        holder.cslQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.getContext().startActivity(new Intent(v.getContext(), AnswersActivity.class));
+            }
+        });
     }
 
     @Override
@@ -49,19 +59,20 @@ public class QuestionRcvAdapter extends RecyclerView.Adapter<QuestionRcvAdapter.
     }
 
     class QuestionItemViewHolder extends RecyclerView.ViewHolder{
-        TextView tvAuthorTime;
-        TextView tvTitle;
-        TextView tvContent;
-        TextView tvTag;
-        TextView tvAnswerCount;
+        private TextView tvAuthorTime;
+        private TextView tvTitle;
+        private TextView tvContent;
+        private TextView tvTag;
+        private TextView tvAnswerCount;
+        private ConstraintLayout cslQuestion;
         public QuestionItemViewHolder(View itemView) {
             super(itemView);
-            tvAuthorTime = (TextView)itemView.findViewById(R.id.question_rcv_item_author_time);
-            tvTitle = (TextView)itemView.findViewById(R.id.question_rcv_item_title);
-            tvContent = (TextView)itemView.findViewById(R.id.question_rcy_item_content);
-            tvTag = (TextView)itemView.findViewById(R.id.question_rcv_item_tag);
-            tvAnswerCount = (TextView)itemView.findViewById(R.id.question_rcv_item_answer_count);
-
+            cslQuestion = (ConstraintLayout)itemView.findViewById(R.id.question_rcv_item_csl) ;
+            tvAuthorTime = (TextView)itemView.findViewById(R.id.question_rcv_item_tv_author_time);
+            tvTitle = (TextView)itemView.findViewById(R.id.question_rcv_item_tv_title);
+            tvContent = (TextView)itemView.findViewById(R.id.question_rcv_item_tv_content);
+            tvTag = (TextView)itemView.findViewById(R.id.question_rcv_item_tv_tag);
+            tvAnswerCount = (TextView)itemView.findViewById(R.id.question_rcv_item_tv_answer_count);
         }
     }
 }

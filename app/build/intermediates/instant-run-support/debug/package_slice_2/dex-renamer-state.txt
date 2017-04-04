@@ -1,4 +1,4 @@
-#Mon Apr 03 15:43:44 CST 2017
+#Tue Apr 04 11:31:42 CST 2017
 base.0=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
 renamed.0=classes.dex
 file.0=D\:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex

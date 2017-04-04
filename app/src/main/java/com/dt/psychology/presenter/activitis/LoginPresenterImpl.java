@@ -1,10 +1,13 @@
 package com.dt.psychology.presenter.activitis;
 
+import com.dt.psychology.R;
 import com.dt.psychology.network.UserService;
 import com.dt.psychology.presenter.BasePresenter;
 import com.dt.psychology.test.User;
+import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.activities.MainActivity;
 import com.dt.psychology.ui.views.LoginView;
+import com.dt.psychology.util.NetworkUtil;
 import com.dt.psychology.util.Validator;
 
 import java.util.HashMap;
@@ -38,6 +41,10 @@ public class LoginPresenterImpl implements LoginPresenter{
 
     @Override
     public void login(String user, String password) {
+        if (!NetworkUtil.isNetworkConnected(loginView.getContext())){
+            loginView.showToast(R.string.network_unavailable);
+            return;
+        }
         Map<String,String> map = new HashMap<>();
         if (Validator.isMobile(user)){
             map.put("userPhone",user);

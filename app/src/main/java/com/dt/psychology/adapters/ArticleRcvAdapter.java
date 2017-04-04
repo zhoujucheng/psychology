@@ -1,5 +1,7 @@
 package com.dt.psychology.adapters;
 
+import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.domain.Article;
+import com.dt.psychology.ui.activities.ArticleDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +40,13 @@ public class ArticleRcvAdapter extends RecyclerView.Adapter<ArticleRcvAdapter.Ar
     public void onBindViewHolder(ArticleItemViewHolder holder, int position) {
         Article article = articles.get(position);
         ImageView iv = holder.iv;
-//        Glide.with(iv.getContext()).load(article.getImageUrl()).into(iv);
-//        holder.tv.setText(article.getBrief());
+        Glide.with(iv.getContext()).load("abc").placeholder(R.drawable.placeholder).into(iv);
+        holder.csl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.getContext().startActivity(new Intent(v.getContext(), ArticleDetailActivity.class));
+            }
+        });
     }
 
     @Override
@@ -49,10 +57,12 @@ public class ArticleRcvAdapter extends RecyclerView.Adapter<ArticleRcvAdapter.Ar
     class ArticleItemViewHolder extends RecyclerView.ViewHolder{
         private ImageView iv;
         private TextView tv;
+        private ConstraintLayout csl;
         public ArticleItemViewHolder(View itemView) {
             super(itemView);
             iv = (ImageView)itemView.findViewById(R.id.article_rcv_item_iv);
             tv = (TextView)itemView.findViewById(R.id.article_rcv_item_tv);
+            csl = (ConstraintLayout)itemView.findViewById(R.id.article_rcv_item_csl);
         }
     }
 }

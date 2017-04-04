@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
@@ -17,8 +17,12 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:7:5-23:19
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:8:5-33:19
 MERGED from [com.android.support:design:25.3.1] D:\solfware\android\AVD\.android\build-cache\c5594070238649ca63950e40407d0af0d31b7b2e\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] D:\solfware\android\AVD\.android\build-cache\803bde19384fe4ee392925d655489d26bdf5f471\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] D:\solfware\android\AVD\.android\build-cache\f6f7cc8ac4b02d5425f3b054a728db476091df90\output\AndroidManifest.xml:9:5-20
@@ -36,43 +40,59 @@ MERGED from [com.android.support:support-core-utils:25.3.1] D:\solfware\android\
 MERGED from [com.android.support:support-compat:25.3.1] D:\solfware\android\AVD\.android\build-cache\7e88cfc66481bd958e7cda952b699e5517517578\output\AndroidManifest.xml:29:5-20
 MERGED from [com.squareup.leakcanary:leakcanary-android:1.5] D:\solfware\android\AVD\.android\build-cache\aa9782d7366758c56c1b8e49c8918b897f9a0ea9\output\AndroidManifest.xml:28:5-57:19
 	android:label
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:12:9-41
 	android:supportsRtl
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:13:9-35
 	android:allowBackup
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:10:9-35
 	android:icon
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:10:9-43
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:11:9-43
 	android:theme
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:14:9-40
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:9:9-41
 activity#com.dt.psychology.ui.activities.MainActivity
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:14:9-73
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:15:9-64
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:14:19-61
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:15:19-61
 activity#com.dt.psychology.ui.activities.ArticleActivity
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:15:9-67
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:16:9-67
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:15:19-64
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:16:19-64
 activity#com.dt.psychology.ui.activities.SignUpActivity
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:16:9-66
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:17:9-66
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:16:19-63
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:17:19-63
 activity#com.dt.psychology.ui.activities.LoginActivity
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:17:9-22:20
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:18:9-24:20
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:17:19-62
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:18:19-62
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:18:13-21:29
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.dt.psychology.ui.activities.AnswersActivity
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:25:9-67
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:25:19-64
+receiver#com.dt.psychology.components.NetworkChangeReceiver
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:27:9-30:39
+	android:enabled
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:29:13-35
+	android:exported
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:28:13-61
+activity#com.dt.psychology.ui.activities.ArticleDetailActivity
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:32:9-82
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:32:19-70
 uses-sdk
 INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.3.1] D:\solfware\android\AVD\.android\build-cache\c5594070238649ca63950e40407d0af0d31b7b2e\output\AndroidManifest.xml:21:5-23:62
@@ -121,7 +141,7 @@ MERGED from [com.android.support:support-compat:25.3.1] D:\solfware\android\AVD\
 		ADDED from [com.android.support:design:25.3.1] D:\solfware\android\AVD\.android\build-cache\c5594070238649ca63950e40407d0af0d31b7b2e\output\AndroidManifest.xml:26:9-47
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] D:\solfware\android\AVD\.android\build-cache\aa9782d7366758c56c1b8e49c8918b897f9a0ea9\output\AndroidManifest.xml:25:5-80
-IMPLIED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-25:12 reason: com.squareup.leakcanary requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-35:12 reason: com.squareup.leakcanary requested WRITE_EXTERNAL_STORAGE
 	android:name
 		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] D:\solfware\android\AVD\.android\build-cache\aa9782d7366758c56c1b8e49c8918b897f9a0ea9\output\AndroidManifest.xml:25:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE

@@ -15,9 +15,9 @@ import java.lang.Override;
 public class SignUpActivity_ViewBinding implements Unbinder {
   private SignUpActivity target;
 
-  private View view2131624078;
+  private View view2131624088;
 
-  private View view2131624081;
+  private View view2131624091;
 
   @UiThread
   public SignUpActivity_ViewBinding(SignUpActivity target) {
@@ -31,7 +31,7 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.activity_sign_up_btn_validate_code, "field 'btnValidateCode' and method 'getValidateCodeClick'");
     target.btnValidateCode = Utils.castView(view, R.id.activity_sign_up_btn_validate_code, "field 'btnValidateCode'", Button.class);
-    view2131624078 = view;
+    view2131624088 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -39,7 +39,7 @@ public class SignUpActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.activity_sign_up_back, "method 'backClick'");
-    view2131624081 = view;
+    view2131624091 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -57,9 +57,9 @@ public class SignUpActivity_ViewBinding implements Unbinder {
 
     target.btnValidateCode = null;
 
-    view2131624078.setOnClickListener(null);
-    view2131624078 = null;
-    view2131624081.setOnClickListener(null);
-    view2131624081 = null;
+    view2131624088.setOnClickListener(null);
+    view2131624088 = null;
+    view2131624091.setOnClickListener(null);
+    view2131624091 = null;
   }
 }

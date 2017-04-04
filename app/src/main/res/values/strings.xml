@@ -8,4 +8,7 @@
         <item>按时间排序</item>
         <item>按回答数排序</item>
     </string-array>
+
+    <string name="network_error">网络出错</string>
+    <string name="network_unavailable">当前网络不可用</string>
 </resources>

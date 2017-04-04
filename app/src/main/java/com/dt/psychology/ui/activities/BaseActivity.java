@@ -48,6 +48,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
     @Override
+    public void showToast(int id) {
+        ToastUtil.showToast(getApplicationContext(),id);
+    }
+
+    @Override
     public Context getContext(){
         return this;
     }

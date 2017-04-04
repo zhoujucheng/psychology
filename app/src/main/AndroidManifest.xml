@@ -3,6 +3,7 @@
     package="com.dt.psychology">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".ui.MyApplication"
@@ -11,15 +12,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.MainActivity"></activity>
+        <activity android:name=".ui.activities.MainActivity" />
         <activity android:name=".ui.activities.ArticleActivity" />
         <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activities.AnswersActivity" />
+
+        <receiver
+            android:name=".components.NetworkChangeReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.activities.ArticleDetailActivity"></activity>
     </application>
 
 </manifest>

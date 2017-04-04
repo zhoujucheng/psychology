@@ -1,11 +1,13 @@
 package com.dt.psychology.ui.fragments;
 
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
@@ -21,6 +23,8 @@ public class PersonalFragment extends BaseFragment {
 
     @BindView(R.id.fragment_personal_cciv_head)
     CircleImageView cciv;
+    @BindView(R.id.fragment_personal_edit_data)
+    TextView tvEditData;
 
     public PersonalFragment() {
         // Required empty public constructor
@@ -28,7 +32,8 @@ public class PersonalFragment extends BaseFragment {
 
     @Override
     void init() {
-        Glide.with(this).load(R.drawable.img3).into(cciv);
+        Glide.with(this).load(R.drawable.head_placeholder).into(cciv);
+        tvEditData.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
     }
 
     @Override

@@ -11,9 +11,14 @@ public class ToastUtil {
     private static Toast mToast;
 
     public static void showToast(Context context,String content){
-        if (mToast == null){
-            mToast = Toast.makeText(context,content,Toast.LENGTH_LONG);
-        }else mToast.setText(content);
+        if (mToast == null) mToast = Toast.makeText(context,content,Toast.LENGTH_LONG);
+        else mToast.setText(content);
+        mToast.show();
+    }
+
+    public static void showToast(Context context,int id){
+        if (mToast == null) mToast = Toast.makeText(context,id,Toast.LENGTH_LONG);
+        else mToast.setText(id);
         mToast.show();
     }
 }

@@ -3,7 +3,9 @@ package com.dt.psychology.dagger2.components;
 import com.dt.psychology.dagger2.modules.ActivityModule;
 import com.dt.psychology.dagger2.modules.FragmentModule;
 import com.dt.psychology.dagger2.scope.ActivityScope;
+import com.dt.psychology.ui.activities.AnswersActivity;
 import com.dt.psychology.ui.activities.ArticleActivity;
+import com.dt.psychology.ui.activities.ArticleDetailActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.MainActivity;
 
@@ -20,4 +22,6 @@ public interface ActivityComponent {
     void inject(MainActivity mainActivity);
     void inject(ArticleActivity articleActivity);
     void inject(LoginActivity loginActivity);
+    void inject(AnswersActivity answersActivity);
+    void inject(ArticleDetailActivity articleDetailActivity);
 }
