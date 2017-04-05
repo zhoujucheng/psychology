@@ -3,6 +3,7 @@ package com.dt.psychology.ui.activities;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
+import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
 import butterknife.Unbinder;
@@ -15,9 +16,11 @@ import java.lang.Override;
 public class SignUpActivity_ViewBinding implements Unbinder {
   private SignUpActivity target;
 
-  private View view2131624088;
+  private View view2131624101;
 
-  private View view2131624091;
+  private View view2131624106;
+
+  private View view2131624108;
 
   @UiThread
   public SignUpActivity_ViewBinding(SignUpActivity target) {
@@ -29,17 +32,29 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     View view;
-    view = Utils.findRequiredView(source, R.id.activity_sign_up_btn_validate_code, "field 'btnValidateCode' and method 'getValidateCodeClick'");
-    target.btnValidateCode = Utils.castView(view, R.id.activity_sign_up_btn_validate_code, "field 'btnValidateCode'", Button.class);
-    view2131624088 = view;
+    view = Utils.findRequiredView(source, R.id.activity_sign_up_btn_verification_code, "field 'btnVerificationCode' and method 'getVerificationCodeClick'");
+    target.btnVerificationCode = Utils.castView(view, R.id.activity_sign_up_btn_verification_code, "field 'btnVerificationCode'", Button.class);
+    view2131624101 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
-        target.getValidateCodeClick(p0);
+        target.getVerificationCodeClick(p0);
+      }
+    });
+    target.tiedtPhoneEmail = Utils.findRequiredViewAsType(source, R.id.activity_sign_up_tiedt_phone_email, "field 'tiedtPhoneEmail'", TextInputEditText.class);
+    target.tiedtVerificationCode = Utils.findRequiredViewAsType(source, R.id.activity_sign_up_tiedt_verification_code, "field 'tiedtVerificationCode'", TextInputEditText.class);
+    target.tiedtNickname = Utils.findRequiredViewAsType(source, R.id.activity_sign_up_tiedt_nickname, "field 'tiedtNickname'", TextInputEditText.class);
+    target.tiedtPassword = Utils.findRequiredViewAsType(source, R.id.activity_sign_up_tiedt_password, "field 'tiedtPassword'", TextInputEditText.class);
+    view = Utils.findRequiredView(source, R.id.activity_sign_up_btn_sign_up, "method 'signUpClick'");
+    view2131624106 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.signUpClick();
       }
     });
     view = Utils.findRequiredView(source, R.id.activity_sign_up_back, "method 'backClick'");
-    view2131624091 = view;
+    view2131624108 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -55,11 +70,17 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.btnValidateCode = null;
+    target.btnVerificationCode = null;
+    target.tiedtPhoneEmail = null;
+    target.tiedtVerificationCode = null;
+    target.tiedtNickname = null;
+    target.tiedtPassword = null;
 
-    view2131624088.setOnClickListener(null);
-    view2131624088 = null;
-    view2131624091.setOnClickListener(null);
-    view2131624091 = null;
+    view2131624101.setOnClickListener(null);
+    view2131624101 = null;
+    view2131624106.setOnClickListener(null);
+    view2131624106 = null;
+    view2131624108.setOnClickListener(null);
+    view2131624108 = null;
   }
 }

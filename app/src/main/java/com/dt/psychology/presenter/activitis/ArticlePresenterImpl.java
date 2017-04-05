@@ -2,7 +2,6 @@ package com.dt.psychology.presenter.activitis;
 
 import android.content.Context;
 import android.util.Log;
-import com.dt.psychology.test.Sevice;
 import com.dt.psychology.ui.views.ArticleView;
 
 import javax.inject.Inject;
@@ -14,8 +13,6 @@ import javax.inject.Inject;
 public class ArticlePresenterImpl implements ArticlePresenter {
     @Inject
     Context context;
-    @Inject
-    Sevice sevice;
 
     private ArticleView articleView;
 

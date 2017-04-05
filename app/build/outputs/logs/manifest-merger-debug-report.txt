@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
 		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:8:5-33:19
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:8:5-34:19
 MERGED from [com.android.support:design:25.3.1] D:\solfware\android\AVD\.android\build-cache\c5594070238649ca63950e40407d0af0d31b7b2e\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] D:\solfware\android\AVD\.android\build-cache\803bde19384fe4ee392925d655489d26bdf5f471\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] D:\solfware\android\AVD\.android\build-cache\f6f7cc8ac4b02d5425f3b054a728db476091df90\output\AndroidManifest.xml:9:5-20
@@ -90,9 +90,13 @@ ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:27:9-3
 	android:name
 		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:28:13-61
 activity#com.dt.psychology.ui.activities.ArticleDetailActivity
-ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:32:9-82
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:32:9-73
 	android:name
 		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:32:19-70
+activity#com.dt.psychology.ui.activities.EditDataActivity
+ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:33:9-77
+	android:name
+		ADDED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:33:19-65
 uses-sdk
 INJECTED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.3.1] D:\solfware\android\AVD\.android\build-cache\c5594070238649ca63950e40407d0af0d31b7b2e\output\AndroidManifest.xml:21:5-23:62
@@ -141,7 +145,7 @@ MERGED from [com.android.support:support-compat:25.3.1] D:\solfware\android\AVD\
 		ADDED from [com.android.support:design:25.3.1] D:\solfware\android\AVD\.android\build-cache\c5594070238649ca63950e40407d0af0d31b7b2e\output\AndroidManifest.xml:26:9-47
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] D:\solfware\android\AVD\.android\build-cache\aa9782d7366758c56c1b8e49c8918b897f9a0ea9\output\AndroidManifest.xml:25:5-80
-IMPLIED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-35:12 reason: com.squareup.leakcanary requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\sources\andorid\Psychology\app\src\main\AndroidManifest.xml:2:1-36:12 reason: com.squareup.leakcanary requested WRITE_EXTERNAL_STORAGE
 	android:name
 		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] D:\solfware\android\AVD\.android\build-cache\aa9782d7366758c56c1b8e49c8918b897f9a0ea9\output\AndroidManifest.xml:25:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE

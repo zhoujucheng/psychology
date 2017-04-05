@@ -6,6 +6,7 @@ import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.TextView;
 import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
 import com.dt.psychology.R;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -15,12 +16,23 @@ import java.lang.Override;
 public class PersonalFragment_ViewBinding implements Unbinder {
   private PersonalFragment target;
 
+  private View view2131624162;
+
   @UiThread
-  public PersonalFragment_ViewBinding(PersonalFragment target, View source) {
+  public PersonalFragment_ViewBinding(final PersonalFragment target, View source) {
     this.target = target;
 
+    View view;
     target.cciv = Utils.findRequiredViewAsType(source, R.id.fragment_personal_cciv_head, "field 'cciv'", CircleImageView.class);
-    target.tvEditData = Utils.findRequiredViewAsType(source, R.id.fragment_personal_edit_data, "field 'tvEditData'", TextView.class);
+    view = Utils.findRequiredView(source, R.id.fragment_personal_tv_edit_data, "field 'tvEditData' and method 'editDataClick'");
+    target.tvEditData = Utils.castView(view, R.id.fragment_personal_tv_edit_data, "field 'tvEditData'", TextView.class);
+    view2131624162 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.editDataClick();
+      }
+    });
   }
 
   @Override
@@ -32,5 +44,8 @@ public class PersonalFragment_ViewBinding implements Unbinder {
 
     target.cciv = null;
     target.tvEditData = null;
+
+    view2131624162.setOnClickListener(null);
+    view2131624162 = null;
   }
 }

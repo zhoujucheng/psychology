@@ -1,14 +1,12 @@
 package com.dt.psychology.ui;
 
 import android.app.Application;
-import android.telephony.TelephonyManager;
 
 import com.dt.psychology.dagger2.components.AppComponent;
 import com.dt.psychology.dagger2.components.DaggerAppComponent;
 import com.dt.psychology.dagger2.modules.AppModule;
 import com.dt.psychology.domain.DaoSession;
-import com.dt.psychology.test.User;
-import com.dt.psychology.ui.activities.ArticleActivity;
+import com.dt.psychology.domain.User;
 import com.squareup.leakcanary.LeakCanary;
 
 import java.util.concurrent.ExecutorService;
@@ -20,8 +18,8 @@ import javax.inject.Inject;
  */
 
 public class MyApplication extends Application {
-
-    public static final String BASE_URL = "http://192.168.199.226:8080/info/";
+    public static final String BASE_URL = "http://192.168.1.67:8080/accompany/";
+//    public static final String BASE_URL = "http://192.168.43.27:8080/test2/";
     private AppComponent appComponent;
     private User user;
     private static boolean networkUsable;

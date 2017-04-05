@@ -8,6 +8,8 @@ import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
 import com.dt.psychology.presenter.activitis.LoginPresenter;
 import com.dt.psychology.presenter.activitis.LoginPresenterImpl;
+import com.dt.psychology.presenter.activitis.SignUpPresenter;
+import com.dt.psychology.presenter.activitis.SignUpPresenterImpl;
 
 import dagger.Module;
 import dagger.Provides;
@@ -41,4 +43,11 @@ public class ActivityModule {
     public LoginPresenter provideLoginPresenterImpl(LoginPresenterImpl loginPresenter){
         return loginPresenter;
     }
+
+    @Provides
+    @ActivityScope
+    public SignUpPresenter provideSignUpPresenterImpl(SignUpPresenterImpl signUpPresenter){
+        return  signUpPresenter;
+    }
+
 }

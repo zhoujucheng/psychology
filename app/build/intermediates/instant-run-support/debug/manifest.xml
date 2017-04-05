@@ -43,6 +43,7 @@
             android:exported="true" />
 
         <activity android:name="com.dt.psychology.ui.activities.ArticleDetailActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.EditDataActivity" />
 
         <service
             android:name="com.squareup.leakcanary.internal.HeapAnalyzerService"
@@ -73,9 +74,10 @@
             android:taskAffinity="com.squareup.leakcanary"
             android:theme="@style/leak_canary_Theme.Transparent" />
 
-        <service
-            android:name="com.android.tools.fd.runtime.InstantRunService"
-            android:exported="true" />
+        <provider
+            android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:authorities="com.dt.psychology.com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

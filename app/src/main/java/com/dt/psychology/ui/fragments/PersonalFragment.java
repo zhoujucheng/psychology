@@ -12,8 +12,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.dagger2.components.FragmentComponent;
+import com.dt.psychology.ui.activities.EditDataActivity;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -23,7 +25,7 @@ public class PersonalFragment extends BaseFragment {
 
     @BindView(R.id.fragment_personal_cciv_head)
     CircleImageView cciv;
-    @BindView(R.id.fragment_personal_edit_data)
+    @BindView(R.id.fragment_personal_tv_edit_data)
     TextView tvEditData;
 
     public PersonalFragment() {
@@ -44,6 +46,11 @@ public class PersonalFragment extends BaseFragment {
     @Override
     void inject(FragmentComponent fragmentComponent) {
         fragmentComponent.inject(this);
+    }
+
+    @OnClick(R.id.fragment_personal_tv_edit_data)
+    public void editDataClick(){
+        startActivity(EditDataActivity.class);
     }
 
 }

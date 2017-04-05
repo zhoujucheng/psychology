@@ -28,6 +28,10 @@
         "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_data.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_edit_data.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },

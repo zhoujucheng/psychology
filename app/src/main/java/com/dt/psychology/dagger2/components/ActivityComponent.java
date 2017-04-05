@@ -6,8 +6,10 @@ import com.dt.psychology.dagger2.scope.ActivityScope;
 import com.dt.psychology.ui.activities.AnswersActivity;
 import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.ArticleDetailActivity;
+import com.dt.psychology.ui.activities.EditDataActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.MainActivity;
+import com.dt.psychology.ui.activities.SignUpActivity;
 
 import dagger.Subcomponent;
 
@@ -24,4 +26,6 @@ public interface ActivityComponent {
     void inject(LoginActivity loginActivity);
     void inject(AnswersActivity answersActivity);
     void inject(ArticleDetailActivity articleDetailActivity);
+    void inject(EditDataActivity editDataActivity);
+    void inject(SignUpActivity signUpActivity);
 }

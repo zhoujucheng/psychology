@@ -19,7 +19,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 
-public class ArticleActivity extends BaseSwipeBackActivity implements ArticleView,SwipeRefreshLayout.OnRefreshListener {
+public class ArticleActivity extends BaseSwipeBackActivity implements ArticleView,SwipeRefreshLayout.OnRefreshListener{
 
     @BindView(R.id.activity_article_rcv)
     RecyclerView rcv;
@@ -58,5 +58,4 @@ public class ArticleActivity extends BaseSwipeBackActivity implements ArticleVie
     public void onRefresh() {
 
     }
-
 }

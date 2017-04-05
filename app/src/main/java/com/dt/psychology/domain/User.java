@@ -25,7 +25,7 @@ public class User implements Serializable {
     /**
      * 用户手机号
      */
-    private Integer userPhone;
+    private Long userPhone;
 
     /**
      * 用户邮箱
@@ -61,8 +61,11 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Generated(hash = 2065745244)
-    public User(Long id, String headPortraitSrc, Integer userPhone, String userMail,
+    public User() {
+    }
+
+    @Generated(hash = 829957669)
+    public User(Long id, String headPortraitSrc, Long userPhone, String userMail,
             String alias, String sex, Integer age, String area, String briefing,
             String password) {
         this.id = id;
@@ -75,10 +78,6 @@ public class User implements Serializable {
         this.area = area;
         this.briefing = briefing;
         this.password = password;
-    }
-
-    @Generated(hash = 586692638)
-    public User() {
     }
 
     public Long getId() {
@@ -97,11 +96,11 @@ public class User implements Serializable {
         this.headPortraitSrc = headPortraitSrc;
     }
 
-    public Integer getUserPhone() {
+    public Long getUserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(Integer userPhone) {
+    public void setUserPhone(Long userPhone) {
         this.userPhone = userPhone;
     }
 

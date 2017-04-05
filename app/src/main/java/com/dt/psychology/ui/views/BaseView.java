@@ -1,6 +1,7 @@
 package com.dt.psychology.ui.views;
 
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 
 import com.dt.psychology.ui.MyApplication;
 
@@ -15,4 +16,7 @@ public interface BaseView {
     MyApplication getMyApplication();
     void startActivity(Class<?> cls);
     void activityFinish();
+    AlertDialog showDialogWithBar(String title);
+    void showDialog(String title,String content);
+
 }

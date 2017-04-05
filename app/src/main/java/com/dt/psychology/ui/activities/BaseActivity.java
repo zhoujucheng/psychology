@@ -3,8 +3,10 @@ package com.dt.psychology.ui.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.dt.psychology.dagger2.components.ActivityComponent;
@@ -70,6 +72,26 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     public void activityFinish(){
         finish();
+    }
+
+    @Override
+    public AlertDialog showDialogWithBar(String title) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setView(new ProgressBar(this))
+                .setCancelable(false)
+                .create();
+        alertDialog.show();
+        return alertDialog;
+    }
+
+    @Override
+    public void showDialog(String title, String content) {
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(content)
+                .create()
+                .show();
     }
 
     protected abstract void init();

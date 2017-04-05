@@ -24,7 +24,7 @@ public class UserDao extends AbstractDao<User, Long> {
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property HeadPortraitSrc = new Property(1, String.class, "headPortraitSrc", false, "HEAD_PORTRAIT_SRC");
-        public final static Property UserPhone = new Property(2, Integer.class, "userPhone", false, "USER_PHONE");
+        public final static Property UserPhone = new Property(2, Long.class, "userPhone", false, "USER_PHONE");
         public final static Property UserMail = new Property(3, String.class, "userMail", false, "USER_MAIL");
         public final static Property Alias = new Property(4, String.class, "alias", false, "ALIAS");
         public final static Property Sex = new Property(5, String.class, "sex", false, "SEX");
@@ -79,7 +79,7 @@ public class UserDao extends AbstractDao<User, Long> {
             stmt.bindString(2, headPortraitSrc);
         }
  
-        Integer userPhone = entity.getUserPhone();
+        Long userPhone = entity.getUserPhone();
         if (userPhone != null) {
             stmt.bindLong(3, userPhone);
         }
@@ -134,7 +134,7 @@ public class UserDao extends AbstractDao<User, Long> {
             stmt.bindString(2, headPortraitSrc);
         }
  
-        Integer userPhone = entity.getUserPhone();
+        Long userPhone = entity.getUserPhone();
         if (userPhone != null) {
             stmt.bindLong(3, userPhone);
         }
@@ -185,7 +185,7 @@ public class UserDao extends AbstractDao<User, Long> {
         User entity = new User( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // headPortraitSrc
-            cursor.isNull(offset + 2) ? null : cursor.getInt(offset + 2), // userPhone
+            cursor.isNull(offset + 2) ? null : cursor.getLong(offset + 2), // userPhone
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // userMail
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // alias
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // sex
@@ -201,7 +201,7 @@ public class UserDao extends AbstractDao<User, Long> {
     public void readEntity(Cursor cursor, User entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setHeadPortraitSrc(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setUserPhone(cursor.isNull(offset + 2) ? null : cursor.getInt(offset + 2));
+        entity.setUserPhone(cursor.isNull(offset + 2) ? null : cursor.getLong(offset + 2));
         entity.setUserMail(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setAlias(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
         entity.setSex(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));

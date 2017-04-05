@@ -8,5 +8,5 @@ import com.dt.psychology.ui.views.LoginView;
  */
 
 public interface LoginPresenter extends BasePresenter<LoginView>{
-    void login(String user,String password);
+    void login(String phoneOrEmail,String password);
 }

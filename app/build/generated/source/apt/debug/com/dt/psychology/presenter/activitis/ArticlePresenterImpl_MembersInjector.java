@@ -2,7 +2,6 @@
 package com.dt.psychology.presenter.activitis;
 
 import android.content.Context;
-import com.dt.psychology.test.Sevice;
 import dagger.MembersInjector;
 import javax.inject.Provider;
 
@@ -10,19 +9,13 @@ public final class ArticlePresenterImpl_MembersInjector
     implements MembersInjector<ArticlePresenterImpl> {
   private final Provider<Context> contextProvider;
 
-  private final Provider<Sevice> seviceProvider;
-
-  public ArticlePresenterImpl_MembersInjector(
-      Provider<Context> contextProvider, Provider<Sevice> seviceProvider) {
+  public ArticlePresenterImpl_MembersInjector(Provider<Context> contextProvider) {
     assert contextProvider != null;
     this.contextProvider = contextProvider;
-    assert seviceProvider != null;
-    this.seviceProvider = seviceProvider;
   }
 
-  public static MembersInjector<ArticlePresenterImpl> create(
-      Provider<Context> contextProvider, Provider<Sevice> seviceProvider) {
-    return new ArticlePresenterImpl_MembersInjector(contextProvider, seviceProvider);
+  public static MembersInjector<ArticlePresenterImpl> create(Provider<Context> contextProvider) {
+    return new ArticlePresenterImpl_MembersInjector(contextProvider);
   }
 
   @Override
@@ -31,15 +24,10 @@ public final class ArticlePresenterImpl_MembersInjector
       throw new NullPointerException("Cannot inject members into a null reference");
     }
     instance.context = contextProvider.get();
-    instance.sevice = seviceProvider.get();
   }
 
   public static void injectContext(
       ArticlePresenterImpl instance, Provider<Context> contextProvider) {
     instance.context = contextProvider.get();
-  }
-
-  public static void injectSevice(ArticlePresenterImpl instance, Provider<Sevice> seviceProvider) {
-    instance.sevice = seviceProvider.get();
   }
 }

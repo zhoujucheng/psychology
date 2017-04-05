@@ -1,13 +1,22 @@
 package com.dt.psychology.network;
 
-import com.dt.psychology.test.User;
+import com.dt.psychology.domain.Json;
+import com.dt.psychology.domain.User;
 
 import java.util.Map;
 
+import javax.inject.Qualifier;
+
 import io.reactivex.Observable;
+import io.reactivex.Observer;
+import retrofit2.Response;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 /**
  * Created by dnnt9 on 2017/4/2.
@@ -16,5 +25,12 @@ import retrofit2.http.POST;
 public interface UserService {
     @FormUrlEncoded
     @POST("user/login")
-    Observable<User> login(@FieldMap Map<String,String> map);
+    Observable<Response<Json<User>>> login(@FieldMap Map<String,String> map);
+
+    @GET("user/getCode")
+    Observable<Response<Json>> getVerificationCode(@QueryMap Map<String,String> map);
+
+    @FormUrlEncoded
+    @POST("user/signUp")
+    Observable<Response<Json<User>>> signUp(@FieldMap Map<String,String> map);
 }

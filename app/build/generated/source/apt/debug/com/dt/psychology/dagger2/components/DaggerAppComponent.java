@@ -9,12 +9,12 @@ import com.dt.psychology.dagger2.modules.ActivityModule;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideActivityContextFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticlePresenterImplFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideLoginPresenterImplFactory;
+import com.dt.psychology.dagger2.modules.ActivityModule_ProvideSignUpPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.AppModule;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideDaoSessionFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideExecutorServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideOkHttpClientFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideRetrofitFactory;
-import com.dt.psychology.dagger2.modules.AppModule_ProvideSeviceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideUserServiceFactory;
 import com.dt.psychology.dagger2.modules.FragmentModule;
 import com.dt.psychology.domain.DaoSession;
@@ -27,17 +27,23 @@ import com.dt.psychology.presenter.activitis.LoginPresenter;
 import com.dt.psychology.presenter.activitis.LoginPresenterImpl;
 import com.dt.psychology.presenter.activitis.LoginPresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.LoginPresenterImpl_MembersInjector;
-import com.dt.psychology.test.Sevice;
+import com.dt.psychology.presenter.activitis.SignUpPresenter;
+import com.dt.psychology.presenter.activitis.SignUpPresenterImpl;
+import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_Factory;
+import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_MembersInjector;
 import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.MyApplication_MembersInjector;
 import com.dt.psychology.ui.activities.AnswersActivity;
 import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.ArticleActivity_MembersInjector;
 import com.dt.psychology.ui.activities.ArticleDetailActivity;
+import com.dt.psychology.ui.activities.EditDataActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.LoginActivity_MembersInjector;
 import com.dt.psychology.ui.activities.MainActivity;
 import com.dt.psychology.ui.activities.MainActivity_MembersInjector;
+import com.dt.psychology.ui.activities.SignUpActivity;
+import com.dt.psychology.ui.activities.SignUpActivity_MembersInjector;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;
 import com.dt.psychology.ui.fragments.PersonalFragment;
@@ -62,8 +68,6 @@ public final class DaggerAppComponent implements AppComponent {
   private Provider<Retrofit> provideRetrofitProvider;
 
   private Provider<UserService> provideUserServiceProvider;
-
-  private Provider<Sevice> provideSeviceProvider;
 
   private DaggerAppComponent(Builder builder) {
     assert builder != null;
@@ -98,10 +102,6 @@ public final class DaggerAppComponent implements AppComponent {
     this.provideUserServiceProvider =
         DoubleCheck.provider(
             AppModule_ProvideUserServiceFactory.create(builder.appModule, provideRetrofitProvider));
-
-    this.provideSeviceProvider =
-        DoubleCheck.provider(
-            AppModule_ProvideSeviceFactory.create(builder.appModule, provideRetrofitProvider));
   }
 
   @Override
@@ -159,6 +159,14 @@ public final class DaggerAppComponent implements AppComponent {
 
     private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+    private MembersInjector<SignUpPresenterImpl> signUpPresenterImplMembersInjector;
+
+    private Provider<SignUpPresenterImpl> signUpPresenterImplProvider;
+
+    private Provider<SignUpPresenter> provideSignUpPresenterImplProvider;
+
+    private MembersInjector<SignUpActivity> signUpActivityMembersInjector;
+
     private ActivityComponentImpl(ActivityModule activityModule) {
       this.activityModule = Preconditions.checkNotNull(activityModule);
       initialize();
@@ -181,8 +189,7 @@ public final class DaggerAppComponent implements AppComponent {
           DoubleCheck.provider(ActivityModule_ProvideActivityContextFactory.create(activityModule));
 
       this.articlePresenterImplMembersInjector =
-          ArticlePresenterImpl_MembersInjector.create(
-              provideActivityContextProvider, DaggerAppComponent.this.provideSeviceProvider);
+          ArticlePresenterImpl_MembersInjector.create(provideActivityContextProvider);
 
       this.articlePresenterImplProvider =
           ArticlePresenterImpl_Factory.create(articlePresenterImplMembersInjector);
@@ -209,6 +216,21 @@ public final class DaggerAppComponent implements AppComponent {
 
       this.loginActivityMembersInjector =
           LoginActivity_MembersInjector.create(provideLoginPresenterImplProvider);
+
+      this.signUpPresenterImplMembersInjector =
+          SignUpPresenterImpl_MembersInjector.create(
+              DaggerAppComponent.this.provideUserServiceProvider, provideActivityContextProvider);
+
+      this.signUpPresenterImplProvider =
+          SignUpPresenterImpl_Factory.create(signUpPresenterImplMembersInjector);
+
+      this.provideSignUpPresenterImplProvider =
+          DoubleCheck.provider(
+              ActivityModule_ProvideSignUpPresenterImplFactory.create(
+                  activityModule, signUpPresenterImplProvider));
+
+      this.signUpActivityMembersInjector =
+          SignUpActivity_MembersInjector.create(provideSignUpPresenterImplProvider);
     }
 
     @Override
@@ -234,6 +256,16 @@ public final class DaggerAppComponent implements AppComponent {
     @Override
     public void inject(ArticleDetailActivity articleDetailActivity) {
       MembersInjectors.<ArticleDetailActivity>noOp().injectMembers(articleDetailActivity);
+    }
+
+    @Override
+    public void inject(EditDataActivity editDataActivity) {
+      MembersInjectors.<EditDataActivity>noOp().injectMembers(editDataActivity);
+    }
+
+    @Override
+    public void inject(SignUpActivity signUpActivity) {
+      signUpActivityMembersInjector.injectMembers(signUpActivity);
     }
 
     @Override

@@ -29,7 +29,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ui.activities.ArticleDetailActivity"></activity>
+        <activity android:name=".ui.activities.ArticleDetailActivity" />
+        <activity android:name=".ui.activities.EditDataActivity"></activity>
     </application>
 
 </manifest>

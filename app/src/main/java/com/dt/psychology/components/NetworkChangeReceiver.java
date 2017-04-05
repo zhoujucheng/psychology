@@ -3,12 +3,8 @@ package com.dt.psychology.components;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.util.Log;
 
 import com.dt.psychology.network.UserService;
-import com.dt.psychology.test.User;
 import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.util.NetworkUtil;
 
@@ -26,7 +22,7 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-        if (NetworkUtil.isNetworkConnected(context)){
+        if (NetworkUtil.isNetworkConnected(context.getApplicationContext())){
             MyApplication.setNetworkUsable(true);
             //          userService.login()
         }else{

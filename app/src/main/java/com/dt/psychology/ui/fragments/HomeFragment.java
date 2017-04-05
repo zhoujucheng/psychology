@@ -1,15 +1,7 @@
 package com.dt.psychology.ui.fragments;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.dagger2.components.FragmentComponent;
@@ -50,7 +42,8 @@ public class HomeFragment extends BaseFragment {
 //        AlertDialog alertDialog = new AlertDialog.Builder(getContext())
 //                .setTitle("test")
 //                .create();
-//                alertDialog.setCanceledOnTouchOutside(false);
+//        alertDialog.setCancelable(false);
+////        alertDialog.setCanceledOnTouchOutside(false);
 //        alertDialog.show();
     }
 
