@@ -20,7 +20,8 @@
             android:id="@+id/activity_sign_up_tiedt_phone_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="手机/邮箱" />
+            android:hint="手机/邮箱"
+            android:maxLines="1"/>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -34,6 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="6"
+            android:maxLines="1"
             android:hint="验证码" />
     </android.support.design.widget.TextInputLayout>
 
@@ -61,7 +63,8 @@
             android:id="@+id/activity_sign_up_tiedt_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="用户名,除空格外4~16位"
+            android:hint="昵称,除空格外4~16位"
+            android:maxLines="1"
             android:maxLength="16" />
     </android.support.design.widget.TextInputLayout>
 
@@ -78,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="密码,6~16位"
+            android:maxLines="1"
             android:inputType="textPassword"
             android:maxLength="16" />
     </android.support.design.widget.TextInputLayout>

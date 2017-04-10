@@ -7,17 +7,24 @@ import com.dt.psychology.components.NetworkChangeReceiver_Factory;
 import com.dt.psychology.components.NetworkChangeReceiver_MembersInjector;
 import com.dt.psychology.dagger2.modules.ActivityModule;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideActivityContextFactory;
+import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticleDaoFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticlePresenterImplFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideLoginPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideSignUpPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.AppModule;
+import com.dt.psychology.dagger2.modules.AppModule_ProvideArticleServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideDaoSessionFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideExecutorServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideOkHttpClientFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideRetrofitFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideUserServiceFactory;
 import com.dt.psychology.dagger2.modules.FragmentModule;
+import com.dt.psychology.dagger2.modules.FragmentModule_ProvideDiscussionFPresenterFactory;
+import com.dt.psychology.dagger2.modules.FragmentModule_ProvideHomeFPresenterFactory;
+import com.dt.psychology.dagger2.modules.FragmentModule_ProvidePersonalFPresenterFactory;
+import com.dt.psychology.domain.ArticleDao;
 import com.dt.psychology.domain.DaoSession;
+import com.dt.psychology.network.ArticleService;
 import com.dt.psychology.network.UserService;
 import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
@@ -31,6 +38,14 @@ import com.dt.psychology.presenter.activitis.SignUpPresenter;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_MembersInjector;
+import com.dt.psychology.presenter.fragments.DiscussionFPresenter;
+import com.dt.psychology.presenter.fragments.DiscussionFPresenterImpl_Factory;
+import com.dt.psychology.presenter.fragments.HomeFPresenter;
+import com.dt.psychology.presenter.fragments.HomeFPresenterImpl;
+import com.dt.psychology.presenter.fragments.HomeFPresenterImpl_Factory;
+import com.dt.psychology.presenter.fragments.HomeFPresenterImpl_MembersInjector;
+import com.dt.psychology.presenter.fragments.PersonalFPresenter;
+import com.dt.psychology.presenter.fragments.PersonalFPresenterImpl_Factory;
 import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.MyApplication_MembersInjector;
 import com.dt.psychology.ui.activities.AnswersActivity;
@@ -41,12 +56,15 @@ import com.dt.psychology.ui.activities.EditDataActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.LoginActivity_MembersInjector;
 import com.dt.psychology.ui.activities.MainActivity;
-import com.dt.psychology.ui.activities.MainActivity_MembersInjector;
 import com.dt.psychology.ui.activities.SignUpActivity;
 import com.dt.psychology.ui.activities.SignUpActivity_MembersInjector;
+import com.dt.psychology.ui.activities.SplashActivity;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
+import com.dt.psychology.ui.fragments.DiscussionFragment_MembersInjector;
 import com.dt.psychology.ui.fragments.HomeFragment;
+import com.dt.psychology.ui.fragments.HomeFragment_MembersInjector;
 import com.dt.psychology.ui.fragments.PersonalFragment;
+import com.dt.psychology.ui.fragments.PersonalFragment_MembersInjector;
 import dagger.MembersInjector;
 import dagger.internal.DoubleCheck;
 import dagger.internal.MembersInjectors;
@@ -61,13 +79,19 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<DaoSession> provideDaoSessionProvider;
 
-  private MembersInjector<MyApplication> myApplicationMembersInjector;
-
   private Provider<OkHttpClient> provideOkHttpClientProvider;
 
   private Provider<Retrofit> provideRetrofitProvider;
 
   private Provider<UserService> provideUserServiceProvider;
+
+  private MembersInjector<NetworkChangeReceiver> networkChangeReceiverMembersInjector;
+
+  private Provider<NetworkChangeReceiver> networkChangeReceiverProvider;
+
+  private MembersInjector<MyApplication> myApplicationMembersInjector;
+
+  private Provider<ArticleService> provideArticleServiceProvider;
 
   private DaggerAppComponent(Builder builder) {
     assert builder != null;
@@ -87,10 +111,6 @@ public final class DaggerAppComponent implements AppComponent {
     this.provideDaoSessionProvider =
         DoubleCheck.provider(AppModule_ProvideDaoSessionFactory.create(builder.appModule));
 
-    this.myApplicationMembersInjector =
-        MyApplication_MembersInjector.create(
-            provideExecutorServiceProvider, provideDaoSessionProvider);
-
     this.provideOkHttpClientProvider =
         DoubleCheck.provider(AppModule_ProvideOkHttpClientFactory.create(builder.appModule));
 
@@ -102,6 +122,23 @@ public final class DaggerAppComponent implements AppComponent {
     this.provideUserServiceProvider =
         DoubleCheck.provider(
             AppModule_ProvideUserServiceFactory.create(builder.appModule, provideRetrofitProvider));
+
+    this.networkChangeReceiverMembersInjector =
+        NetworkChangeReceiver_MembersInjector.create(provideUserServiceProvider);
+
+    this.networkChangeReceiverProvider =
+        NetworkChangeReceiver_Factory.create(networkChangeReceiverMembersInjector);
+
+    this.myApplicationMembersInjector =
+        MyApplication_MembersInjector.create(
+            provideExecutorServiceProvider,
+            provideDaoSessionProvider,
+            networkChangeReceiverProvider);
+
+    this.provideArticleServiceProvider =
+        DoubleCheck.provider(
+            AppModule_ProvideArticleServiceFactory.create(
+                builder.appModule, provideRetrofitProvider));
   }
 
   @Override
@@ -135,13 +172,7 @@ public final class DaggerAppComponent implements AppComponent {
   private final class ActivityComponentImpl implements ActivityComponent {
     private final ActivityModule activityModule;
 
-    private MembersInjector<NetworkChangeReceiver> networkChangeReceiverMembersInjector;
-
-    private Provider<NetworkChangeReceiver> networkChangeReceiverProvider;
-
-    private MembersInjector<MainActivity> mainActivityMembersInjector;
-
-    private Provider<Context> provideActivityContextProvider;
+    private Provider<ArticleDao> provideArticleDaoProvider;
 
     private MembersInjector<ArticlePresenterImpl> articlePresenterImplMembersInjector;
 
@@ -159,6 +190,8 @@ public final class DaggerAppComponent implements AppComponent {
 
     private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+    private Provider<Context> provideActivityContextProvider;
+
     private MembersInjector<SignUpPresenterImpl> signUpPresenterImplMembersInjector;
 
     private Provider<SignUpPresenterImpl> signUpPresenterImplProvider;
@@ -175,21 +208,16 @@ public final class DaggerAppComponent implements AppComponent {
     @SuppressWarnings("unchecked")
     private void initialize() {
 
-      this.networkChangeReceiverMembersInjector =
-          NetworkChangeReceiver_MembersInjector.create(
-              DaggerAppComponent.this.provideUserServiceProvider);
-
-      this.networkChangeReceiverProvider =
-          NetworkChangeReceiver_Factory.create(networkChangeReceiverMembersInjector);
-
-      this.mainActivityMembersInjector =
-          MainActivity_MembersInjector.create(networkChangeReceiverProvider);
-
-      this.provideActivityContextProvider =
-          DoubleCheck.provider(ActivityModule_ProvideActivityContextFactory.create(activityModule));
+      this.provideArticleDaoProvider =
+          DoubleCheck.provider(
+              ActivityModule_ProvideArticleDaoFactory.create(
+                  activityModule, DaggerAppComponent.this.provideDaoSessionProvider));
 
       this.articlePresenterImplMembersInjector =
-          ArticlePresenterImpl_MembersInjector.create(provideActivityContextProvider);
+          ArticlePresenterImpl_MembersInjector.create(
+              DaggerAppComponent.this.provideArticleServiceProvider,
+              DaggerAppComponent.this.provideExecutorServiceProvider,
+              provideArticleDaoProvider);
 
       this.articlePresenterImplProvider =
           ArticlePresenterImpl_Factory.create(articlePresenterImplMembersInjector);
@@ -217,6 +245,9 @@ public final class DaggerAppComponent implements AppComponent {
       this.loginActivityMembersInjector =
           LoginActivity_MembersInjector.create(provideLoginPresenterImplProvider);
 
+      this.provideActivityContextProvider =
+          DoubleCheck.provider(ActivityModule_ProvideActivityContextFactory.create(activityModule));
+
       this.signUpPresenterImplMembersInjector =
           SignUpPresenterImpl_MembersInjector.create(
               DaggerAppComponent.this.provideUserServiceProvider, provideActivityContextProvider);
@@ -235,7 +266,7 @@ public final class DaggerAppComponent implements AppComponent {
 
     @Override
     public void inject(MainActivity mainActivity) {
-      mainActivityMembersInjector.injectMembers(mainActivity);
+      MembersInjectors.<MainActivity>noOp().injectMembers(mainActivity);
     }
 
     @Override
@@ -269,6 +300,11 @@ public final class DaggerAppComponent implements AppComponent {
     }
 
     @Override
+    public void inject(SplashActivity splashActivity) {
+      MembersInjectors.<SplashActivity>noOp().injectMembers(splashActivity);
+    }
+
+    @Override
     public FragmentComponent plus(FragmentModule fragmentModule) {
       return new FragmentComponentImpl(fragmentModule);
     }
@@ -276,23 +312,74 @@ public final class DaggerAppComponent implements AppComponent {
     private final class FragmentComponentImpl implements FragmentComponent {
       private final FragmentModule fragmentModule;
 
+      private MembersInjector<HomeFPresenterImpl> homeFPresenterImplMembersInjector;
+
+      private Provider<HomeFPresenterImpl> homeFPresenterImplProvider;
+
+      private Provider<HomeFPresenter> provideHomeFPresenterProvider;
+
+      private MembersInjector<HomeFragment> homeFragmentMembersInjector;
+
+      private Provider<PersonalFPresenter> providePersonalFPresenterProvider;
+
+      private MembersInjector<PersonalFragment> personalFragmentMembersInjector;
+
+      private Provider<DiscussionFPresenter> provideDiscussionFPresenterProvider;
+
+      private MembersInjector<DiscussionFragment> discussionFragmentMembersInjector;
+
       private FragmentComponentImpl(FragmentModule fragmentModule) {
         this.fragmentModule = Preconditions.checkNotNull(fragmentModule);
+        initialize();
+      }
+
+      @SuppressWarnings("unchecked")
+      private void initialize() {
+
+        this.homeFPresenterImplMembersInjector =
+            HomeFPresenterImpl_MembersInjector.create(
+                DaggerAppComponent.this.provideArticleServiceProvider,
+                DaggerAppComponent.this.provideDaoSessionProvider,
+                DaggerAppComponent.this.provideExecutorServiceProvider);
+
+        this.homeFPresenterImplProvider =
+            HomeFPresenterImpl_Factory.create(homeFPresenterImplMembersInjector);
+
+        this.provideHomeFPresenterProvider =
+            FragmentModule_ProvideHomeFPresenterFactory.create(
+                fragmentModule, homeFPresenterImplProvider);
+
+        this.homeFragmentMembersInjector =
+            HomeFragment_MembersInjector.create(provideHomeFPresenterProvider);
+
+        this.providePersonalFPresenterProvider =
+            FragmentModule_ProvidePersonalFPresenterFactory.create(
+                fragmentModule, PersonalFPresenterImpl_Factory.create());
+
+        this.personalFragmentMembersInjector =
+            PersonalFragment_MembersInjector.create(providePersonalFPresenterProvider);
+
+        this.provideDiscussionFPresenterProvider =
+            FragmentModule_ProvideDiscussionFPresenterFactory.create(
+                fragmentModule, DiscussionFPresenterImpl_Factory.create());
+
+        this.discussionFragmentMembersInjector =
+            DiscussionFragment_MembersInjector.create(provideDiscussionFPresenterProvider);
       }
 
       @Override
       public void inject(HomeFragment homeFragment) {
-        MembersInjectors.<HomeFragment>noOp().injectMembers(homeFragment);
+        homeFragmentMembersInjector.injectMembers(homeFragment);
       }
 
       @Override
       public void inject(PersonalFragment personalFragment) {
-        MembersInjectors.<PersonalFragment>noOp().injectMembers(personalFragment);
+        personalFragmentMembersInjector.injectMembers(personalFragment);
       }
 
       @Override
       public void inject(DiscussionFragment discussionFragment) {
-        MembersInjectors.<DiscussionFragment>noOp().injectMembers(discussionFragment);
+        discussionFragmentMembersInjector.injectMembers(discussionFragment);
       }
     }
   }

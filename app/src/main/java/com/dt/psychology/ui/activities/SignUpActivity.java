@@ -10,7 +10,9 @@ import android.widget.Button;
 import com.dt.psychology.R;
 import com.dt.psychology.dagger2.components.ActivityComponent;
 import com.dt.psychology.presenter.activitis.SignUpPresenter;
+import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.views.SignUpView;
+import com.dt.psychology.util.Validator;
 
 import javax.inject.Inject;
 
@@ -54,9 +56,18 @@ public class SignUpActivity extends BaseActivity implements SignUpView{
 
     @OnClick(R.id.activity_sign_up_btn_verification_code)
     public void getVerificationCodeClick(final View view){
-        if (!view.isClickable())    return;
+        String phoneOrEmail = tiedtPhoneEmail.getText().toString();
+        if (view.isClickable()){
+            if (!Validator.isMobile(phoneOrEmail) && !Validator.isEmail(phoneOrEmail)){
+                showToast("手机/邮箱格式错误");
+                return;
+            }else if (!MyApplication.isNetworkUsable()){
+                showToast(R.string.network_unavailable);
+                return;
+            }
+        }else return;
         view.setClickable(false);
-        signUpPresenter.getVerificationCode(tiedtPhoneEmail.getText().toString());
+        signUpPresenter.getVerificationCode(phoneOrEmail);
         view.setBackgroundColor(ContextCompat.getColor(this,R.color.rippleDefaultColor));
         Runnable runnable = new Runnable() {
             private int countDown = 60;
@@ -65,7 +76,7 @@ public class SignUpActivity extends BaseActivity implements SignUpView{
                 if (isFinishing())  return;
                 if (countDown > 0){
                     btnVerificationCode.setText(String.valueOf(countDown));
-                    new Handler().postDelayed(this,1000);
+                    view.postDelayed(this,1000);
                     countDown--;
                 }else {
                     view.setClickable(true);
@@ -74,7 +85,7 @@ public class SignUpActivity extends BaseActivity implements SignUpView{
                 }
             }
         };
-        new Handler().post(runnable);
+        view.post(runnable);
     }
 
     @OnClick(R.id.activity_sign_up_btn_sign_up)

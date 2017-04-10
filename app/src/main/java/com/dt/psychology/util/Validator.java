@@ -24,6 +24,6 @@ public class Validator {
     }
 
     public static boolean isVerificationCode(String code){
-        return code.matches("^\\d{6}$");
+        return code.matches("^\\w{6}$");
     }
 }

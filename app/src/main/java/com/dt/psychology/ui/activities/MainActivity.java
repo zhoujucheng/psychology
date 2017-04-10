@@ -43,16 +43,16 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.activity_main_vp)
     ViewPager vp;
 
-    @Inject
-    NetworkChangeReceiver networkChangeReceiver;
+//    @Inject
+//    NetworkChangeReceiver networkChangeReceiver;
 
     @Override
     protected void init() {
         initViewPager();
         homeClick();
-        IntentFilter netFilter = new IntentFilter();
-        netFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        registerReceiver(networkChangeReceiver,netFilter);
+//        IntentFilter netFilter = new IntentFilter();
+//        netFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+//        registerReceiver(networkChangeReceiver,netFilter);
     }
 
     private void initViewPager(){
@@ -76,7 +76,6 @@ public class MainActivity extends BaseActivity {
                         break;
                 }
             }
-
             @Override
             public void onPageScrollStateChanged(int state) {}
         });
@@ -134,6 +133,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(networkChangeReceiver);
+//        unregisterReceiver(networkChangeReceiver);
     }
 }

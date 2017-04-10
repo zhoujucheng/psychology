@@ -10,6 +10,7 @@ import com.dt.psychology.ui.activities.EditDataActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.MainActivity;
 import com.dt.psychology.ui.activities.SignUpActivity;
+import com.dt.psychology.ui.activities.SplashActivity;
 
 import dagger.Subcomponent;
 
@@ -28,4 +29,5 @@ public interface ActivityComponent {
     void inject(ArticleDetailActivity articleDetailActivity);
     void inject(EditDataActivity editDataActivity);
     void inject(SignUpActivity signUpActivity);
+    void inject(SplashActivity splashActivity);
 }

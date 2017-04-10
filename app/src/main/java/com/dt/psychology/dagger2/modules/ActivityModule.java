@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.dt.psychology.dagger2.scope.ActivityScope;
+import com.dt.psychology.domain.ArticleDao;
+import com.dt.psychology.domain.DaoSession;
 import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
 import com.dt.psychology.presenter.activitis.LoginPresenter;
@@ -48,6 +50,12 @@ public class ActivityModule {
     @ActivityScope
     public SignUpPresenter provideSignUpPresenterImpl(SignUpPresenterImpl signUpPresenter){
         return  signUpPresenter;
+    }
+
+    @Provides
+    @ActivityScope
+    public ArticleDao provideArticleDao(DaoSession daoSession){
+        return daoSession.getArticleDao();
     }
 
 }

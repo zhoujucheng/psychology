@@ -3,6 +3,7 @@ package com.dt.psychology.ui.activities;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import butterknife.Unbinder;
@@ -24,6 +25,7 @@ public class ArticleActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.rcv = Utils.findRequiredViewAsType(source, R.id.activity_article_rcv, "field 'rcv'", RecyclerView.class);
+    target.srfly = Utils.findRequiredViewAsType(source, R.id.activity_article_srfly, "field 'srfly'", SwipeRefreshLayout.class);
   }
 
   @Override
@@ -34,5 +36,6 @@ public class ArticleActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.rcv = null;
+    target.srfly = null;
   }
 }

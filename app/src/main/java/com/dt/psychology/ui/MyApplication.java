@@ -1,7 +1,9 @@
 package com.dt.psychology.ui;
 
 import android.app.Application;
+import android.content.IntentFilter;
 
+import com.dt.psychology.components.NetworkChangeReceiver;
 import com.dt.psychology.dagger2.components.AppComponent;
 import com.dt.psychology.dagger2.components.DaggerAppComponent;
 import com.dt.psychology.dagger2.modules.AppModule;
@@ -18,8 +20,8 @@ import javax.inject.Inject;
  */
 
 public class MyApplication extends Application {
-    public static final String BASE_URL = "http://192.168.1.67:8080/accompany/";
-//    public static final String BASE_URL = "http://192.168.43.27:8080/test2/";
+//    public static final String BASE_URL = "http://192.168.1.67:8080/accompany/";
+    public static final String BASE_URL = "http://192.168.188.36:8080/test2/";
     private AppComponent appComponent;
     private User user;
     private static boolean networkUsable;
@@ -27,6 +29,8 @@ public class MyApplication extends Application {
     ExecutorService executorService;
     @Inject
     DaoSession daoSession;
+    @Inject
+    NetworkChangeReceiver networkChangeReceiver;
 
     @Override
     public void onCreate() {
@@ -34,6 +38,9 @@ public class MyApplication extends Application {
         Thread.setDefaultUncaughtExceptionHandler(Thread.getDefaultUncaughtExceptionHandler());
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         appComponent.inject(this);
+        IntentFilter netFilter = new IntentFilter();
+        netFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        registerReceiver(networkChangeReceiver,netFilter);
         if (LeakCanary.isInAnalyzerProcess(this)) return;
         LeakCanary.install(this);
     }
@@ -46,7 +53,7 @@ public class MyApplication extends Application {
         this.user = user;
     }
 
-    public User getUser(User user){
+    public User getUser(){
         return user;
     }
 

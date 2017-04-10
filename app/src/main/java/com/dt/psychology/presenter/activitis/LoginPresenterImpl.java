@@ -12,6 +12,7 @@ import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.activities.MainActivity;
 import com.dt.psychology.ui.views.LoginView;
 import com.dt.psychology.util.Constant;
+import com.dt.psychology.util.MyFunction;
 import com.dt.psychology.util.MyObserver;
 import com.dt.psychology.util.NetworkUtil;
 import com.dt.psychology.util.Validator;
@@ -22,7 +23,10 @@ import java.util.concurrent.ExecutorService;
 
 import javax.inject.Inject;
 
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 
@@ -48,28 +52,70 @@ public class LoginPresenterImpl implements LoginPresenter{
     @Override
     public void login(String phoneOrEmail, String password) {
         //判断
-        if (!NetworkUtil.isNetworkConnected(loginView.getMyApplication())) {
+        if (!MyApplication.isNetworkUsable()) {
             loginView.showToast(R.string.network_unavailable);
         }else if (!Validator.isMobile(phoneOrEmail) && !Validator.isEmail(phoneOrEmail)){
-            loginView.showToast("手机或邮箱错误");
+            loginView.showToast("手机/邮箱错误");
         }else if (!Validator.isPassword(password)){
             loginView.showToast("密码错误");
         }else {
             final Map<String, String> map = new HashMap<>();
             if (Validator.isMobile(phoneOrEmail)){
-                map.put("userPhone", phoneOrEmail);
+                map.put(Constant.USER_PHONE, phoneOrEmail);
             } else{
-                map.put("userMail", phoneOrEmail);
+                map.put(Constant.USER_EMAIL, phoneOrEmail);
             }
-            map.put("password",password);
-            final AlertDialog alertDialog = loginView.showDialogWithBar("正在登录..");
+            map.put(Constant.USER_PASSWORD,password);
             userService.login(map)
-                    .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
+//                    .observeOn(Schedulers.io())
+//                    .map(new MyFunction<Json<User>>())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .doOnNext(new Consumer<Json<User>>() {
+//                        @Override
+//                        public void accept(Json<User> userJson) throws Exception {
+//
+//                        }
+//                    })
+//                    .observeOn(Schedulers.io())
+//                    .doOnNext(new Consumer<Json<User>>() {
+//                        @Override
+//                        public void accept(Json<User> userJson) throws Exception {
+//
+//                        }
+//                    })
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .subscribe(new Observer<Json<User>>() {
+//                        @Override
+//                        public void onSubscribe(Disposable d) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onNext(Json<User> value) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onError(Throwable e) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onComplete() {
+//
+//                        }
+//                    });
+                    .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new MyObserver<Json<User>>() {
+                        private AlertDialog alertDialog;
                         @Override
-                        public void onSuccess(Response<Json<User>> response) {
-                            final User user = response.body().getObject();
+                        public void onSubscribe(Disposable disposable) {
+                            alertDialog = loginView.showDialogWithBar("正在登录..");
+                        }
+                        @Override
+                        public void onSuccess(Json<User> json) {
+                            final User user = json.getObject();
                             MyApplication myApplication = loginView.getMyApplication();
                             myApplication.setUser(user);
                             alertDialog.dismiss();
@@ -84,9 +130,9 @@ public class LoginPresenterImpl implements LoginPresenter{
                                     SharedPreferences preferences = context.getSharedPreferences(Constant.SHARED_PRE_FILE_NAME, Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = preferences.edit();
                                     if (user.getUserPhone() != null && !user.getUserPhone().equals(""))
-                                        editor.putLong(Constant.USER_NAME, user.getUserPhone());
+                                        editor.putString(Constant.USER_PHONE_EMAIL, String.valueOf(user.getUserPhone()));
                                     else if (user.getUserMail() != null && !user.getUserMail().equals(""))
-                                        editor.putString(Constant.USER_NAME, user.getUserMail());
+                                        editor.putString(Constant.USER_PHONE_EMAIL, user.getUserMail());
                                     editor.putString(Constant.USER_PASSWORD, user.getUserMail());
                                     editor.apply();
                                 }

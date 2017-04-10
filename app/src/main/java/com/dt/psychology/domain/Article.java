@@ -5,7 +5,10 @@ import org.greenrobot.greendao.annotation.Id;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Transient;
 
 /**
  * 文章
@@ -50,12 +53,18 @@ public class Article implements Serializable {
      */
     private Date publishTime;
 
+    @Transient
+    private List<ArticleTag> tags;
+
     /**
      * 文章内容
      */
     private String content;
 
     private static final long serialVersionUID = 1L;
+
+    public Article() {
+    }
 
     @Generated(hash = 1782071150)
     public Article(Long id, String title, String imagesUrl, String author,
@@ -69,10 +78,6 @@ public class Article implements Serializable {
         this.thanksNums = thanksNums;
         this.publishTime = publishTime;
         this.content = content;
-    }
-
-    @Generated(hash = 742516792)
-    public Article() {
     }
 
     public Long getId() {
@@ -137,5 +142,13 @@ public class Article implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public List<ArticleTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ArticleTag> tags) {
+        this.tags = tags;
     }
 }

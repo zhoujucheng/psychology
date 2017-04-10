@@ -2,15 +2,14 @@ package com.dt.psychology.presenter.activitis;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
-import android.widget.ProgressBar;
-
 import com.dt.psychology.R;
 import com.dt.psychology.domain.Json;
 import com.dt.psychology.domain.User;
 import com.dt.psychology.network.UserService;
+import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.views.SignUpView;
+import com.dt.psychology.util.Constant;
 import com.dt.psychology.util.MyObserver;
-import com.dt.psychology.util.NetworkUtil;
 import com.dt.psychology.util.Validator;
 
 import java.util.HashMap;
@@ -19,6 +18,7 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 
@@ -29,10 +29,12 @@ import retrofit2.Response;
 public class SignUpPresenterImpl implements SignUpPresenter {
 
     private SignUpView signUpView;
+
     @Inject
     UserService userService;
     @Inject
     Context context;
+
     @Inject
     public SignUpPresenterImpl(){}
 
@@ -43,40 +45,32 @@ public class SignUpPresenterImpl implements SignUpPresenter {
 
     @Override
     public void getVerificationCode(String phoneOrEmail) {
-        if (!NetworkUtil.isNetworkConnected(context)){
-            signUpView.showToast(R.string.network_unavailable);
-        }else if (!Validator.isMobile(phoneOrEmail) && !Validator.isEmail(phoneOrEmail)){
-            signUpView.showToast("手机或邮箱格式错误");
+        //在调用该方法之前已经验证过phoneOrEmail和网络状态
+        Map<String,String> map = new HashMap<>();
+        if (Validator.isMobile(phoneOrEmail)){
+            map.put(Constant.USER_PHONE,phoneOrEmail);
         }else {
-            Map<String,String> map = new HashMap<>();
-            if (Validator.isMobile(phoneOrEmail)){
-                map.put("userPhone",phoneOrEmail);
-            }else if (Validator.isEmail(phoneOrEmail)){
-                map.put("userEmail",phoneOrEmail);
-            }
-            userService.getVerificationCode(map)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .subscribe(new MyObserver<Json>() {
-                        @Override
-                        public void onSuccess(Response<Json> response) {
-                            signUpView.showToast(response.body().getMessage());
-                        }
-
-                        @Override
-                        public void errorMsg(String msg) {
-                            signUpView.showToast(msg);
-                        }
-                    });
+            map.put(Constant.USER_EMAIL, phoneOrEmail);
         }
+        userService.getVerificationCode(map)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new MyObserver<Json>() {
+                    @Override
+                    public void onSuccess(Json json) {
+                        signUpView.showToast(json.getMessage());
+                    }
 
-
-
+                    @Override
+                    public void errorMsg(String msg) {
+                        signUpView.showToast(msg);
+                    }
+                });
     }
 
     @Override
     public void signUp(String phoneOrEmail, String verificationCode, String nickName, String password) {
-        if (!NetworkUtil.isNetworkConnected(context)){
+        if (!MyApplication.isNetworkUsable()){
             signUpView.showToast(R.string.network_unavailable);
         }else if (!Validator.isMobile(phoneOrEmail) && !Validator.isEmail(phoneOrEmail)){
             signUpView.showToast("手机或邮箱格式错误");
@@ -89,20 +83,25 @@ public class SignUpPresenterImpl implements SignUpPresenter {
         }else {
             Map<String,String> map = new HashMap<>();
             if (Validator.isMobile(phoneOrEmail)){
-                map.put("userPhone",phoneOrEmail);
+                map.put(Constant.USER_PHONE,phoneOrEmail);
             }else if (Validator.isEmail(phoneOrEmail)){
-                map.put("userEmail",phoneOrEmail);
+                map.put(Constant.USER_EMAIL,phoneOrEmail);
             }
             map.put("verificationCode",verificationCode);
             map.put("alias",nickName);
-            map.put("password",password);
-            final AlertDialog alertDialog = signUpView.showDialogWithBar("正在注册，请稍候...");
+            map.put(Constant.USER_PASSWORD,password);
             userService.signUp(map)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new MyObserver<Json<User>>() {
+                        private AlertDialog alertDialog;
                         @Override
-                        public void onSuccess(Response<Json<User>> response) {
+                        public void onSubscribe(Disposable disposable) {
+                            alertDialog = signUpView.showDialogWithBar("正在注册，请稍候...");
+                        }
+
+                        @Override
+                        public void onSuccess(Json<User> json) {
                             alertDialog.dismiss();
                             signUpView.showDialog("注册成功","");
                         }

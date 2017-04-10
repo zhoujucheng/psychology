@@ -28,13 +28,7 @@
         <activity android:name="com.dt.psychology.ui.activities.MainActivity" />
         <activity android:name="com.dt.psychology.ui.activities.ArticleActivity" />
         <activity android:name="com.dt.psychology.ui.activities.SignUpActivity" />
-        <activity android:name="com.dt.psychology.ui.activities.LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.dt.psychology.ui.activities.LoginActivity" />
         <activity android:name="com.dt.psychology.ui.activities.AnswersActivity" />
 
         <receiver
@@ -44,6 +38,13 @@
 
         <activity android:name="com.dt.psychology.ui.activities.ArticleDetailActivity" />
         <activity android:name="com.dt.psychology.ui.activities.EditDataActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.SplashActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name="com.squareup.leakcanary.internal.HeapAnalyzerService"

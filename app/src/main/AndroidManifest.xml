@@ -15,22 +15,22 @@
         <activity android:name=".ui.activities.MainActivity" />
         <activity android:name=".ui.activities.ArticleActivity" />
         <activity android:name=".ui.activities.SignUpActivity" />
-        <activity android:name=".ui.activities.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.activities.LoginActivity"></activity>
         <activity android:name=".ui.activities.AnswersActivity" />
-
         <receiver
             android:name=".components.NetworkChangeReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity android:name=".ui.activities.ArticleDetailActivity" />
-        <activity android:name=".ui.activities.EditDataActivity"></activity>
+        <activity android:name=".ui.activities.EditDataActivity" />
+        <activity android:name=".ui.activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

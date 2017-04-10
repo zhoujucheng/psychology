@@ -61,8 +61,7 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public User() {
-    }
+    public User() {}
 
     @Generated(hash = 829957669)
     public User(Long id, String headPortraitSrc, Long userPhone, String userMail,

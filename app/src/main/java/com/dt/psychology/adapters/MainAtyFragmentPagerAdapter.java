@@ -3,6 +3,7 @@ package com.dt.psychology.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.HomeFragment;

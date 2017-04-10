@@ -12,7 +12,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.dagger2.components.FragmentComponent;
+import com.dt.psychology.presenter.fragments.PersonalFPresenter;
 import com.dt.psychology.ui.activities.EditDataActivity;
+import com.dt.psychology.ui.views.PersonalFView;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -21,12 +25,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PersonalFragment extends BaseFragment {
+public class PersonalFragment extends BaseFragment implements PersonalFView{
 
     @BindView(R.id.fragment_personal_cciv_head)
     CircleImageView cciv;
     @BindView(R.id.fragment_personal_tv_edit_data)
     TextView tvEditData;
+    @Inject
+    PersonalFPresenter personalFPresenter;
 
     public PersonalFragment() {
         // Required empty public constructor
@@ -34,6 +40,7 @@ public class PersonalFragment extends BaseFragment {
 
     @Override
     void init() {
+        personalFPresenter.attachView(this);
         Glide.with(this).load(R.drawable.head_placeholder).into(cciv);
         tvEditData.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
     }

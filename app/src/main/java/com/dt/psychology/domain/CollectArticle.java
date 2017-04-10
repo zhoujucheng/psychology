@@ -1,12 +1,17 @@
 package com.dt.psychology.domain;
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author 
  */
 public class CollectArticle implements Serializable {
+
     private Long userId;
 
     private Long articleId;

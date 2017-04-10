@@ -144,6 +144,10 @@
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\a9e31ecd3a41cbc0b8ef1d9bde15dfd9dad6011d\\output\\res\\layout\\view_carousel.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_spash.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_spash.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
@@ -170,6 +174,10 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\recycerview_footer.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\recycerview_footer.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",

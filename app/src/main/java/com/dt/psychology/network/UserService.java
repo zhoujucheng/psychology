@@ -27,10 +27,11 @@ public interface UserService {
     @POST("user/login")
     Observable<Response<Json<User>>> login(@FieldMap Map<String,String> map);
 
-    @GET("user/getCode")
-    Observable<Response<Json>> getVerificationCode(@QueryMap Map<String,String> map);
+    @FormUrlEncoded
+    @POST("user/QRCode")
+    Observable<Response<Json>> getVerificationCode(@FieldMap Map<String,String> map);
 
     @FormUrlEncoded
-    @POST("user/signUp")
+    @POST("user/register")
     Observable<Response<Json<User>>> signUp(@FieldMap Map<String,String> map);
 }

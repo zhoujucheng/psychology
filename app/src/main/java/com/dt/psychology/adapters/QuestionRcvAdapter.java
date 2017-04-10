@@ -22,7 +22,7 @@ import butterknife.BindView;
  * Created by dnnt9 on 2017/4/3.
  */
 
-public class QuestionRcvAdapter extends RecyclerView.Adapter<QuestionRcvAdapter.QuestionItemViewHolder> {
+public class QuestionRcvAdapter extends FooterAdapter<QuestionRcvAdapter.QuestionItemViewHolder> {
 
     private List<Question> questions;
 
@@ -32,13 +32,18 @@ public class QuestionRcvAdapter extends RecyclerView.Adapter<QuestionRcvAdapter.
     }
 
     @Override
-    public QuestionItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public int getItemCount() {
+        return questions.size()+1;
+    }
+
+    @Override
+    public QuestionItemViewHolder getViewHolder(ViewGroup parent) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.question_rcv_item,parent,false);
         return new QuestionItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(QuestionItemViewHolder holder, int position) {
+    public void itemBindViewHolder(QuestionItemViewHolder holder, int position) {
         Question question = questions.get(position);
         holder.tvAuthorTime.setText("匿名用户     01-31");
         holder.tvContent.setText("以前个给同事留下了不好的印象，形成不好的互动模式，容易被人误会，容易被人忽悠利用，工作上常常不得已加班，下班后休息严重不足。长期如此导致自控力，判断力，行动力下降。陷入恶性循环，我怎样改善这种局面？");
@@ -51,11 +56,6 @@ public class QuestionRcvAdapter extends RecyclerView.Adapter<QuestionRcvAdapter.
                 v.getContext().startActivity(new Intent(v.getContext(), AnswersActivity.class));
             }
         });
-    }
-
-    @Override
-    public int getItemCount() {
-        return questions.size();
     }
 
     class QuestionItemViewHolder extends RecyclerView.ViewHolder{

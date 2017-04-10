@@ -1,6 +1,14 @@
 package com.dt.psychology.util;
 
+import android.util.Log;
+
 import com.dt.psychology.domain.Json;
+import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
+
+import java.io.IOException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import retrofit2.Response;
@@ -18,20 +26,39 @@ public abstract class MyObserver<T extends Json> implements Observer<Response<T>
     public void onNext(Response<T> tResponse) {
         if (tResponse.isSuccessful()){
             T t = tResponse.body();
-            if (t.isSuccessful()) onSuccess(tResponse);
+            if (t.isSuccessful()) onSuccess(t);
             else errorMsg(t.getMessage());
-        }else errorMsg("服务器错误");
+        }else errorMsg("服务器出错");
     }
 
     @Override
     public void onError(Throwable throwable) {
-        errorMsg("网络出错");
+        if ((throwable instanceof NullPointerException) || (throwable instanceof IllegalArgumentException)) {
+            // that's likely a bug in the application
+            Thread.currentThread().getUncaughtExceptionHandler()
+                    .uncaughtException(Thread.currentThread(),throwable);
+            return;
+        }
+        if (throwable instanceof IllegalStateException) {
+            // that's a bug in RxJava or in a custom operator
+            Thread.currentThread().getUncaughtExceptionHandler()
+                    .uncaughtException(Thread.currentThread(),throwable);
+            return;
+        }
+        if (throwable instanceof NetworkUnavailableException){
+            errorMsg(throwable.getMessage());
+        }else if (throwable instanceof IOException || throwable instanceof HttpException){
+            errorMsg("网络出错");
+        }else {
+            errorMsg("发生未知错误");
+        }
+        throwable.printStackTrace();
     }
 
     @Override
     public void onComplete() {}
 
-    public abstract void onSuccess(Response<T> response);
+    public abstract void onSuccess(T t);
 
     public abstract void errorMsg(String msg);
 }

@@ -3,6 +3,7 @@ package com.dt.psychology.ui.fragments;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Spinner;
@@ -22,6 +23,7 @@ public class DiscussionFragment_ViewBinding implements Unbinder {
     target.spnSort = Utils.findRequiredViewAsType(source, R.id.fragment_discussion_spn_sort, "field 'spnSort'", Spinner.class);
     target.spnCategory = Utils.findRequiredViewAsType(source, R.id.fragment_discussion_spn_category, "field 'spnCategory'", Spinner.class);
     target.rcvQuestion = Utils.findRequiredViewAsType(source, R.id.fragment_discussion_rcv_question, "field 'rcvQuestion'", RecyclerView.class);
+    target.srfly = Utils.findRequiredViewAsType(source, R.id.fragment_discussion_srfly, "field 'srfly'", SwipeRefreshLayout.class);
   }
 
   @Override
@@ -34,5 +36,6 @@ public class DiscussionFragment_ViewBinding implements Unbinder {
     target.spnSort = null;
     target.spnCategory = null;
     target.rcvQuestion = null;
+    target.srfly = null;
   }
 }

@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:maxLength="6"
             android:maxLines="1"
-            android:inputType="number"
             android:hint="验证码" />
     </android.support.design.widget.TextInputLayout>
 
