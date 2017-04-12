@@ -45,11 +45,14 @@ public class ArticleActivity extends BaseSwipeBackActivity
         adapter = new ArticleRcvAdapter(new LinkedList<Article>());
         rcv.setLayoutManager(new LinearLayoutManager(this));
         rcv.setAdapter(adapter);
+        srfly.setOnRefreshListener(this);
+        srfly.setRefreshing(true);
+        onRefresh();
         rcv.addOnScrollListener(new RecyclerLoadMoreOnScrollListener() {
             //进入此页面后会自动调用该方法
             @Override
             public void onLoadMore(int currentPage) {
-                Log.e(TAG,"onLoadMore");
+                Log.e(TAG,"onLoadMore()");
                 int status = adapter.getFooterStatus();
                 //当加载状态不为FOOTER_LOAD_MORE且不为FOOTER_NO_MORE时才加载
                 if((status == FooterAdapter.FOOTER_HIDING || status == FooterAdapter.FOOTER_LOAD_FAIL)){
@@ -60,15 +63,14 @@ public class ArticleActivity extends BaseSwipeBackActivity
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                adapter.setFooterStatus(FooterAdapter.FOOTER_LOAD_FAIL);
+                                adapter.setFooterStatus(FooterAdapter.FOOTER_HIDING);
                             }
-                        },1500);
+                        },2000);
                     }
                     else articlePresenter.loadMore(adapter.getArticles());
                 }
             }
         });
-        srfly.setOnRefreshListener(this);
     }
 
     @Override
@@ -109,6 +111,7 @@ public class ArticleActivity extends BaseSwipeBackActivity
 
     @Override
     public void onRefresh() {
+        Log.e(TAG,"onRefresh()");
         //在下拉刷新的同时不可加载更多
         if (adapter.getFooterStatus() == FooterAdapter.FOOTER_LOAD_MORE){
             //虚假刷新
@@ -117,7 +120,7 @@ public class ArticleActivity extends BaseSwipeBackActivity
                 public void run() {
                     srfly.setRefreshing(false);
                 }
-            },1500);
+            },2000);
             return;
         }
         List<Article> articles = adapter.getArticles();

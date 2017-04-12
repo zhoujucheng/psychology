@@ -2,6 +2,7 @@ package com.dt.psychology.ui.fragments;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,16 +16,17 @@ import android.widget.Spinner;
 
 import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
+import com.dt.psychology.adapters.FooterAdapter;
 import com.dt.psychology.adapters.QuestionRcvAdapter;
 import com.dt.psychology.dagger2.components.FragmentComponent;
 import com.dt.psychology.domain.Question;
 import com.dt.psychology.presenter.fragments.DiscussionFPresenter;
-import com.dt.psychology.presenter.fragments.PersonalFPresenter;
 import com.dt.psychology.ui.views.DiscussionFView;
 import com.dt.psychology.util.RecyclerLoadMoreOnScrollListener;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -51,6 +53,7 @@ public class DiscussionFragment extends BaseFragment implements DiscussionFView,
     DiscussionFPresenter discussionFPresenter;
 
     private QuestionRcvAdapter adapter;
+    private boolean isFirstInit = true;
 
     public DiscussionFragment() {
         // Required empty public constructor
@@ -59,24 +62,32 @@ public class DiscussionFragment extends BaseFragment implements DiscussionFView,
 
     @Override
     void init() {
+        Log.e(TAG,"init()");
         initSpn();
-        srfly.setOnRefreshListener(this);
-        List<Question> questions = new ArrayList<>();
-        for (int i = 0;i<10;i++){
-            Question question = new Question();
-            question.setUserId(1L);
-            question.setContent("sdsefwefafasdfsdcsada");
-            question.setTitle("sdfese");
-            question.setCreateTime(new Date(System.currentTimeMillis()));
-            questions.add(question);
-        }
-        adapter = new QuestionRcvAdapter(questions);
+        discussionFPresenter.init();
+        adapter = new QuestionRcvAdapter(new LinkedList<Question>());
         rcvQuestion.setLayoutManager(new LinearLayoutManager(getContext()));
         rcvQuestion.setAdapter(adapter);
+        srfly.setOnRefreshListener(this);
+        srfly.setRefreshing(true);
+        onRefresh();
         rcvQuestion.addOnScrollListener(new RecyclerLoadMoreOnScrollListener() {
             @Override
             public void onLoadMore(int currentPage) {
                 Log.e(TAG,"onLoadMore");
+                int status = adapter.getFooterStatus();
+                if (status == FooterAdapter.FOOTER_LOAD_FAIL || status == FooterAdapter.FOOTER_HIDING){
+                    if (srfly.isRefreshing()){
+                        adapter.setFooterStatus(FooterAdapter.FOOTER_LOAD_MORE);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                adapter.setFooterStatus(FooterAdapter.FOOTER_HIDING);
+                            }
+                        },2000);
+                    }
+                    else    discussionFPresenter.loadMore(adapter.getQuestions());
+                }
             }
         });
     }
@@ -105,6 +116,45 @@ public class DiscussionFragment extends BaseFragment implements DiscussionFView,
 
     @Override
     public void onRefresh() {
+        Log.e(TAG,"onRefresh");
+        if (adapter.getFooterStatus() == FooterAdapter.FOOTER_LOAD_MORE){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    srfly.setRefreshing(false);
+                }
+            },2000);
+            return;
+        }
+        List<Question> questions = adapter.getQuestions();
+        if (questions.size()>0)
+            discussionFPresenter.refresh(questions.get(0).getQuestionId());
+        else discussionFPresenter.refresh(-1);
+    }
 
+    @Override
+    public void cancelRefresh(){
+        srfly.setRefreshing(false);
+    }
+
+    @Override
+    public void addQuestionsAfterTail(List<Question> questions){
+        if (questions != null && questions.size()>0){
+            adapter.getQuestions().addAll(questions);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void addQuestionsBeforeHead(List<Question> questions){
+        if (questions != null){
+            adapter.getQuestions().addAll(0,questions);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void setFooterStatus(int status){
+        adapter.setFooterStatus(status);
     }
 }

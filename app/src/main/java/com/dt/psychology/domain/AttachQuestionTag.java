@@ -12,7 +12,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class AttachQuestionTag implements Serializable {
 
-    @Id
+    @Id(autoincrement = true)
     private Long id;
 
     /**

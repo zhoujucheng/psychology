@@ -24,10 +24,15 @@ public abstract class MyObserver<T extends Json> implements Observer<Response<T>
 
     @Override
     public void onNext(Response<T> tResponse) {
+        if (tResponse == null)  throw new NullPointerException("无response返回");
         if (tResponse.isSuccessful()){
             T t = tResponse.body();
+            if (t == null)  throw new NullPointerException("服务器数据出错");
             if (t.isSuccessful()) onSuccess(t);
-            else errorMsg(t.getMessage());
+            else {
+                if(t.getMessage() != null)  errorMsg(t.getMessage());
+                else errorMsg("服务器出错");
+            }
         }else errorMsg("服务器出错");
     }
 

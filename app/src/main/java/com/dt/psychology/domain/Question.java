@@ -140,6 +140,14 @@ public class Question implements Serializable {
         this.content = content;
     }
 
+    public List<QuestionTag> getQuestionTags() {
+        return questionTags;
+    }
+
+    public void setQuestionTags(List<QuestionTag> questionTags) {
+        this.questionTags = questionTags;
+    }
+
     public User getCurUser(){
         if (user == null)   return getUser();
         return user;

@@ -1,5 +1,6 @@
 package com.dt.psychology.adapters;
 
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -72,7 +73,13 @@ public abstract class FooterAdapter<T extends RecyclerView.ViewHolder> extends R
 
     public void setFooterStatus(int status){
         footerStatus = status;
-        notifyDataSetChanged();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                notifyItemChanged(getItemCount()-1);
+                notifyDataSetChanged();
+            }
+        },50);
     }
 
     public int getFooterStatus(){

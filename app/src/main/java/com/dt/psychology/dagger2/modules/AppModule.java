@@ -5,6 +5,7 @@ import android.util.Log;
 import com.dt.psychology.domain.DaoMaster;
 import com.dt.psychology.domain.DaoSession;
 import com.dt.psychology.network.ArticleService;
+import com.dt.psychology.network.QAndAService;
 import com.dt.psychology.network.UserService;
 import com.dt.psychology.ui.MyApplication;
 import com.google.gson.Gson;
@@ -78,8 +79,8 @@ public class AppModule {
                         return cookies;
                     }
                 })
-                //超时时间为5秒
-                .connectTimeout(5, TimeUnit.SECONDS)
+                //超时时间为3秒
+                .connectTimeout(3, TimeUnit.SECONDS)
                 .addInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
@@ -115,13 +116,15 @@ public class AppModule {
 //                        return new Date(json.getAsJsonPrimitive().getAsLong());
 //                    }
 //                }).create();
-//        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
-        Gson gson = new GsonBuilder().registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
-            @Override
-            public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return new Date(json.getAsJsonPrimitive().getAsLong());
-            }
-        }).create();
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+//                .registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
+//                    @Override
+//                    public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+//                        return new Date(json.getAsJsonPrimitive().getAsLong());
+//                    }
+//                })
+                .create();
         return new Retrofit.Builder()
                 .baseUrl(MyApplication.BASE_URL)
                 .client(client)
@@ -154,5 +157,11 @@ public class AppModule {
     @Singleton
     ArticleService provideArticleService(Retrofit retrofit){
         return  retrofit.create(ArticleService.class);
+    }
+
+    @Provides
+    @Singleton
+    QAndAService provideQAndAService(Retrofit retrofit){
+        return retrofit.create(QAndAService.class);
     }
 }

@@ -44,7 +44,7 @@ public class AttachQuestionTagDao extends AbstractDao<AttachQuestionTag, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"ATTACH_QUESTION_TAG\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"QUESTION_ID\" INTEGER," + // 1: questionId
                 "\"QUESTION_TAG_ID\" INTEGER NOT NULL );"); // 2: questionTagId
     }

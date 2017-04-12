@@ -16,6 +16,7 @@ import com.dt.psychology.dagger2.modules.AppModule_ProvideArticleServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideDaoSessionFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideExecutorServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideOkHttpClientFactory;
+import com.dt.psychology.dagger2.modules.AppModule_ProvideQAndAServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideRetrofitFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideUserServiceFactory;
 import com.dt.psychology.dagger2.modules.FragmentModule;
@@ -25,6 +26,7 @@ import com.dt.psychology.dagger2.modules.FragmentModule_ProvidePersonalFPresente
 import com.dt.psychology.domain.ArticleDao;
 import com.dt.psychology.domain.DaoSession;
 import com.dt.psychology.network.ArticleService;
+import com.dt.psychology.network.QAndAService;
 import com.dt.psychology.network.UserService;
 import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
@@ -39,7 +41,9 @@ import com.dt.psychology.presenter.activitis.SignUpPresenterImpl;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_MembersInjector;
 import com.dt.psychology.presenter.fragments.DiscussionFPresenter;
+import com.dt.psychology.presenter.fragments.DiscussionFPresenterImpl;
 import com.dt.psychology.presenter.fragments.DiscussionFPresenterImpl_Factory;
+import com.dt.psychology.presenter.fragments.DiscussionFPresenterImpl_MembersInjector;
 import com.dt.psychology.presenter.fragments.HomeFPresenter;
 import com.dt.psychology.presenter.fragments.HomeFPresenterImpl;
 import com.dt.psychology.presenter.fragments.HomeFPresenterImpl_Factory;
@@ -93,6 +97,8 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<ArticleService> provideArticleServiceProvider;
 
+  private Provider<QAndAService> provideQAndAServiceProvider;
+
   private DaggerAppComponent(Builder builder) {
     assert builder != null;
     initialize(builder);
@@ -138,6 +144,11 @@ public final class DaggerAppComponent implements AppComponent {
     this.provideArticleServiceProvider =
         DoubleCheck.provider(
             AppModule_ProvideArticleServiceFactory.create(
+                builder.appModule, provideRetrofitProvider));
+
+    this.provideQAndAServiceProvider =
+        DoubleCheck.provider(
+            AppModule_ProvideQAndAServiceFactory.create(
                 builder.appModule, provideRetrofitProvider));
   }
 
@@ -324,6 +335,10 @@ public final class DaggerAppComponent implements AppComponent {
 
       private MembersInjector<PersonalFragment> personalFragmentMembersInjector;
 
+      private MembersInjector<DiscussionFPresenterImpl> discussionFPresenterImplMembersInjector;
+
+      private Provider<DiscussionFPresenterImpl> discussionFPresenterImplProvider;
+
       private Provider<DiscussionFPresenter> provideDiscussionFPresenterProvider;
 
       private MembersInjector<DiscussionFragment> discussionFragmentMembersInjector;
@@ -359,9 +374,17 @@ public final class DaggerAppComponent implements AppComponent {
         this.personalFragmentMembersInjector =
             PersonalFragment_MembersInjector.create(providePersonalFPresenterProvider);
 
+        this.discussionFPresenterImplMembersInjector =
+            DiscussionFPresenterImpl_MembersInjector.create(
+                DaggerAppComponent.this.provideQAndAServiceProvider,
+                DaggerAppComponent.this.provideExecutorServiceProvider);
+
+        this.discussionFPresenterImplProvider =
+            DiscussionFPresenterImpl_Factory.create(discussionFPresenterImplMembersInjector);
+
         this.provideDiscussionFPresenterProvider =
             FragmentModule_ProvideDiscussionFPresenterFactory.create(
-                fragmentModule, DiscussionFPresenterImpl_Factory.create());
+                fragmentModule, discussionFPresenterImplProvider);
 
         this.discussionFragmentMembersInjector =
             DiscussionFragment_MembersInjector.create(provideDiscussionFPresenterProvider);

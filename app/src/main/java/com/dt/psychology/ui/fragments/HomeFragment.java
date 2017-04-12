@@ -1,6 +1,7 @@
 package com.dt.psychology.ui.fragments;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -30,7 +31,7 @@ import butterknife.OnClick;
  */
 public class HomeFragment extends BaseFragment implements HomeFView{
 
-    private int[] sample = {R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4};
+    private static final String TAG = "HomeFragment";
 
     @BindView(R.id.fragment_home_cv)
     CarouselView carouselView;
@@ -45,6 +46,7 @@ public class HomeFragment extends BaseFragment implements HomeFView{
 
     private boolean isFirstInit = true;
     private Article pushArticle;
+    private int[] sample = {R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4};
 
     public HomeFragment() {
         // Required empty public constructor
@@ -52,6 +54,7 @@ public class HomeFragment extends BaseFragment implements HomeFView{
 
     @Override
     void init() {
+        Log.e(TAG,"init()");
         homeFPresenter.attachView(this);
         carouselView.setPageCount(sample.length);
         carouselView.setImageListener(new ImageListener() {
@@ -113,19 +116,19 @@ public class HomeFragment extends BaseFragment implements HomeFView{
         startActivity(intent);
     }
 
-    public long getTagId(String tagName){
-        ArticleTagDao articleTagDao = getMyApplication().getDaoSession().getArticleTagDao();
-        ArticleTag tag = articleTagDao.queryBuilder()
-                .where(ArticleTagDao.Properties.ArticleTagName.eq(tagName))
-                .unique();
-        if (tag != null)  return tag.getArticleTagId();
-        return 0;
-    }
+//    public long getTagId(String tagName){
+//        ArticleTagDao articleTagDao = getMyApplication().getDaoSession().getArticleTagDao();
+//        ArticleTag tag = articleTagDao.queryBuilder()
+//                .where(ArticleTagDao.Properties.ArticleTagName.eq(tagName))
+//                .unique();
+//        if (tag != null)  return tag.getArticleTagId();
+//        return 0;
+//    }
 
     @Override
     public void setPushArticle(Article article){
         tvBrief.setText(article.getContent());
-        Glide.with(this).load(article.getImagesUrl()).into(ivPush);
+        Glide.with(this).load(article.getImagesUrl()).placeholder(R.drawable.placeholder).into(ivPush);
         pushArticle = article;
     }
 }

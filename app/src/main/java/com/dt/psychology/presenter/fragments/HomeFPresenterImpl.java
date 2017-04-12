@@ -106,6 +106,10 @@ public class HomeFPresenterImpl implements HomeFPresenter {
                     public void onSuccess(Json<List<Article>> json) {
                         final List<Article> articles = json.getObject();
                         if (articles == null || articles.size() < 1)    return;
+                        for (Article article:articles){
+                            if (article.getContent()!=null)
+                            Log.e(Tag,article.getContent());
+                        }
                         homeFView.setPushArticle(articles.get(0));
                         es.submit(new Runnable() {
                             @Override

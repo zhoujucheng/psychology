@@ -17,6 +17,7 @@ import retrofit2.http.QueryMap;
  */
 
 public interface ArticleService {
-    @GET("test")
+    @GET("article/getArticle")
+//    @GET("test")
     Observable<Response<Json<List<Article>>>> getArticles(@QueryMap Map<String,String> map);
 }

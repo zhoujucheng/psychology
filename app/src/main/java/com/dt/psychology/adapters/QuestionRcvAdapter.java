@@ -31,6 +31,10 @@ public class QuestionRcvAdapter extends FooterAdapter<QuestionRcvAdapter.Questio
         this.questions = questions;
     }
 
+    public List<Question> getQuestions(){
+        return questions;
+    }
+
     @Override
     public int getItemCount() {
         return questions.size()+1;
