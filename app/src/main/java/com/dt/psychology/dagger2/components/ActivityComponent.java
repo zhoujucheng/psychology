@@ -6,11 +6,16 @@ import com.dt.psychology.dagger2.scope.ActivityScope;
 import com.dt.psychology.ui.activities.AnswersActivity;
 import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.ArticleDetailActivity;
+import com.dt.psychology.ui.activities.AskQuestionActivity;
 import com.dt.psychology.ui.activities.EditDataActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.MainActivity;
+import com.dt.psychology.ui.activities.MyAnswersActivity;
+import com.dt.psychology.ui.activities.MyCollectionsActivity;
+import com.dt.psychology.ui.activities.MyQuestionsActivity;
 import com.dt.psychology.ui.activities.SignUpActivity;
 import com.dt.psychology.ui.activities.SplashActivity;
+import com.dt.psychology.ui.activities.WriteCommentActivity;
 
 import dagger.Subcomponent;
 
@@ -30,4 +35,9 @@ public interface ActivityComponent {
     void inject(EditDataActivity editDataActivity);
     void inject(SignUpActivity signUpActivity);
     void inject(SplashActivity splashActivity);
+    void inject(AskQuestionActivity askQuestionActivity);
+    void inject(WriteCommentActivity writeCommentActivity);
+    void inject(MyCollectionsActivity myCollectionsActivity);
+    void inject(MyQuestionsActivity myQuestionsActivity);
+    void inject(MyAnswersActivity myAnswersActivity);
 }

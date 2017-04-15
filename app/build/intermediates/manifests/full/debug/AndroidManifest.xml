@@ -45,6 +45,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.dt.psychology.ui.activities.AskQuestionActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.WriteCommentActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.AnswerDetailActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.MyCollectionsActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.MyQuestionsActivity" />
+        <activity android:name="com.dt.psychology.ui.activities.MyAnswersActivity" />
 
         <service
             android:name="com.squareup.leakcanary.internal.HeapAnalyzerService"

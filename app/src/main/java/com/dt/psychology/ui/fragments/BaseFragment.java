@@ -54,8 +54,9 @@ public abstract class BaseFragment extends Fragment implements BaseView{
 
     @Override
     public void showToast(String text) {
-        if (!getActivity().isFinishing())
+        if(getActivity() != null && !getActivity().isFinishing()){
             ToastUtil.showToast(getContext(),text);
+        }
     }
 
     @Override

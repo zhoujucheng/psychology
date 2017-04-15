@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 public interface DiscussionFPresenter extends BasePresenter<DiscussionFView> {
-    void loadMore(List<Question> questions);
-    void refresh(long questionId);
+    void loadMore(List<Question> questions,String keyWords);
+    void refresh(List<Question> questions,String keyWords);
     void init();
 }

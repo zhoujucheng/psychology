@@ -28,7 +28,6 @@ public class ArticleRcvAdapter extends FooterAdapter<ArticleRcvAdapter.ArticleIt
 
     private List<Article> articles;
 
-
     public ArticleRcvAdapter(List<Article> articles){
         if (articles == null) articles = new ArrayList<>();
         this.articles = articles;

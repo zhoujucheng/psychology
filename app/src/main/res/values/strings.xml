@@ -11,4 +11,14 @@
 
     <string name="network_error">网络出错</string>
     <string name="network_unavailable">当前网络不可用</string>
+    <string name="tip_please_login">请先登录</string>
+
+    <string-array name="tag">
+        <item>个人成长</item>
+        <item>人际交往</item>
+        <item>性心理</item>
+        <item>婚恋</item>
+        <item>家庭关系</item>
+        <item>职场</item>
+    </string-array>
 </resources>

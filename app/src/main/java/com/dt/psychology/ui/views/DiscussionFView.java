@@ -13,4 +13,5 @@ public interface DiscussionFView extends BaseView{
     void setFooterStatus(int status);
     void addQuestionsAfterTail(List<Question> questions);
     void addQuestionsBeforeHead(List<Question> questions);
+    void saveAdapterList();
 }

@@ -1,5 +1,6 @@
 package com.dt.psychology.network;
 
+import com.dt.psychology.domain.Comment;
 import com.dt.psychology.domain.Json;
 import com.dt.psychology.domain.Question;
 
@@ -17,6 +18,15 @@ import retrofit2.http.QueryMap;
  */
 
 public interface QAndAService {
+    @GET("question/queryQuestions")
+    Observable<Response<Json<List<Question>>>>  getQuestions(@QueryMap Map<String,String> map);
+
     @GET("abc")
-    Observable<Response<Json<List<Question>>>>  getQuestins(@QueryMap Map<String,String> map);
+    Observable<Response<Json<List<Comment>>>> getComments(@QueryMap Map<String,Long> map);
+
+    @GET("abc")
+    Observable<Response<Json<List<Question>>>> getMyQuestions(@QueryMap Map<String,String> map);
+
+    @GET("aabc")
+    Observable<Response<Json<List<Comment>>>> getMyComments(@QueryMap Map<String,String> map);
 }

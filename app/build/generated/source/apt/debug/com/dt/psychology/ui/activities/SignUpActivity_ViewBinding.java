@@ -16,11 +16,11 @@ import java.lang.Override;
 public class SignUpActivity_ViewBinding implements Unbinder {
   private SignUpActivity target;
 
-  private View view2131624103;
+  private View view2131624117;
 
-  private View view2131624108;
+  private View view2131624122;
 
-  private View view2131624110;
+  private View view2131624124;
 
   @UiThread
   public SignUpActivity_ViewBinding(SignUpActivity target) {
@@ -34,7 +34,7 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.activity_sign_up_btn_verification_code, "field 'btnVerificationCode' and method 'getVerificationCodeClick'");
     target.btnVerificationCode = Utils.castView(view, R.id.activity_sign_up_btn_verification_code, "field 'btnVerificationCode'", Button.class);
-    view2131624103 = view;
+    view2131624117 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -46,7 +46,7 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     target.tiedtNickname = Utils.findRequiredViewAsType(source, R.id.activity_sign_up_tiedt_nickname, "field 'tiedtNickname'", TextInputEditText.class);
     target.tiedtPassword = Utils.findRequiredViewAsType(source, R.id.activity_sign_up_tiedt_password, "field 'tiedtPassword'", TextInputEditText.class);
     view = Utils.findRequiredView(source, R.id.activity_sign_up_btn_sign_up, "method 'signUpClick'");
-    view2131624108 = view;
+    view2131624122 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -54,7 +54,7 @@ public class SignUpActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.activity_sign_up_back, "method 'backClick'");
-    view2131624110 = view;
+    view2131624124 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -76,11 +76,11 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     target.tiedtNickname = null;
     target.tiedtPassword = null;
 
-    view2131624103.setOnClickListener(null);
-    view2131624103 = null;
-    view2131624108.setOnClickListener(null);
-    view2131624108 = null;
-    view2131624110.setOnClickListener(null);
-    view2131624110 = null;
+    view2131624117.setOnClickListener(null);
+    view2131624117 = null;
+    view2131624122.setOnClickListener(null);
+    view2131624122 = null;
+    view2131624124.setOnClickListener(null);
+    view2131624124 = null;
   }
 }

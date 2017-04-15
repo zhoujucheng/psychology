@@ -20,8 +20,7 @@ import javax.inject.Inject;
  */
 
 public class MyApplication extends Application {
-    public static final String BASE_URL = "http://192.168.188.36:8080/accompany/";
-//    public static final String BASE_URL = "http://192.168.1.64:8080/test2/";
+    public static final String BASE_URL = "http://192.168.1.67:8080/accompany/";
     private AppComponent appComponent;
     private User user;
     private static boolean networkUsable;

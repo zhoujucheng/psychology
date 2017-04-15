@@ -24,10 +24,7 @@ public class DaoMaster extends AbstractDaoMaster {
         ArticleDao.createTable(db, ifNotExists);
         ArticleTagDao.createTable(db, ifNotExists);
         AttachArticleTagDao.createTable(db, ifNotExists);
-        AttachQuestionTagDao.createTable(db, ifNotExists);
         CommentDao.createTable(db, ifNotExists);
-        QuestionDao.createTable(db, ifNotExists);
-        QuestionTagDao.createTable(db, ifNotExists);
         UserDao.createTable(db, ifNotExists);
     }
 
@@ -36,10 +33,7 @@ public class DaoMaster extends AbstractDaoMaster {
         ArticleDao.dropTable(db, ifExists);
         ArticleTagDao.dropTable(db, ifExists);
         AttachArticleTagDao.dropTable(db, ifExists);
-        AttachQuestionTagDao.dropTable(db, ifExists);
         CommentDao.dropTable(db, ifExists);
-        QuestionDao.dropTable(db, ifExists);
-        QuestionTagDao.dropTable(db, ifExists);
         UserDao.dropTable(db, ifExists);
     }
 
@@ -62,10 +56,7 @@ public class DaoMaster extends AbstractDaoMaster {
         registerDaoClass(ArticleDao.class);
         registerDaoClass(ArticleTagDao.class);
         registerDaoClass(AttachArticleTagDao.class);
-        registerDaoClass(AttachQuestionTagDao.class);
         registerDaoClass(CommentDao.class);
-        registerDaoClass(QuestionDao.class);
-        registerDaoClass(QuestionTagDao.class);
         registerDaoClass(UserDao.class);
     }
 

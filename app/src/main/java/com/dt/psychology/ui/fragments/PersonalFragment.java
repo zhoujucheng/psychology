@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide;
 import com.dt.psychology.R;
 import com.dt.psychology.dagger2.components.FragmentComponent;
 import com.dt.psychology.presenter.fragments.PersonalFPresenter;
+import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.activities.EditDataActivity;
+import com.dt.psychology.ui.activities.MyCollectionsActivity;
 import com.dt.psychology.ui.views.PersonalFView;
 
 import javax.inject.Inject;
@@ -58,6 +60,20 @@ public class PersonalFragment extends BaseFragment implements PersonalFView{
     @OnClick(R.id.fragment_personal_tv_edit_data)
     public void editDataClick(){
         startActivity(EditDataActivity.class);
+    }
+
+    @OnClick(R.id.fragment_personal_lly_my_collections)
+    public void collectionsClick(){
+        if (MyApplication.isNetworkUsable()){
+            if (getMyApplication().getUser()!=null){
+                startActivity(MyCollectionsActivity.class);
+            }else {
+                showToast(R.string.tip_please_login);
+            }
+        }else {
+            showToast(R.string.network_unavailable);
+        }
+
     }
 
 }

@@ -15,8 +15,9 @@
         <activity android:name=".ui.activities.MainActivity" />
         <activity android:name=".ui.activities.ArticleActivity" />
         <activity android:name=".ui.activities.SignUpActivity" />
-        <activity android:name=".ui.activities.LoginActivity"></activity>
+        <activity android:name=".ui.activities.LoginActivity" />
         <activity android:name=".ui.activities.AnswersActivity" />
+
         <receiver
             android:name=".components.NetworkChangeReceiver"
             android:enabled="true"
@@ -31,6 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activities.AskQuestionActivity" />
+        <activity android:name=".ui.activities.WriteCommentActivity" />
+        <activity android:name=".ui.activities.AnswerDetailActivity" />
+        <activity android:name=".ui.activities.MyCollectionsActivity" />
+        <activity android:name=".ui.activities.MyQuestionsActivity" />
+        <activity android:name=".ui.activities.MyAnswersActivity"></activity>
     </application>
 
 </manifest>

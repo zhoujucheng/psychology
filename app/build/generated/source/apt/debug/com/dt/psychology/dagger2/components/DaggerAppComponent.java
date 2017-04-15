@@ -7,10 +7,13 @@ import com.dt.psychology.components.NetworkChangeReceiver_Factory;
 import com.dt.psychology.components.NetworkChangeReceiver_MembersInjector;
 import com.dt.psychology.dagger2.modules.ActivityModule;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideActivityContextFactory;
+import com.dt.psychology.dagger2.modules.ActivityModule_ProvideAnswerPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticleDaoFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideArticlePresenterImplFactory;
+import com.dt.psychology.dagger2.modules.ActivityModule_ProvideAskQuestionPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideLoginPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.ActivityModule_ProvideSignUpPresenterImplFactory;
+import com.dt.psychology.dagger2.modules.ActivityModule_ProvideWriteCommentPresenterImplFactory;
 import com.dt.psychology.dagger2.modules.AppModule;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideArticleServiceFactory;
 import com.dt.psychology.dagger2.modules.AppModule_ProvideDaoSessionFactory;
@@ -28,10 +31,16 @@ import com.dt.psychology.domain.DaoSession;
 import com.dt.psychology.network.ArticleService;
 import com.dt.psychology.network.QAndAService;
 import com.dt.psychology.network.UserService;
+import com.dt.psychology.presenter.activitis.AnswerPresenter;
+import com.dt.psychology.presenter.activitis.AnswerPresenterImpl;
+import com.dt.psychology.presenter.activitis.AnswerPresenterImpl_Factory;
+import com.dt.psychology.presenter.activitis.AnswerPresenterImpl_MembersInjector;
 import com.dt.psychology.presenter.activitis.ArticlePresenter;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.ArticlePresenterImpl_MembersInjector;
+import com.dt.psychology.presenter.activitis.AskQuestionPresenter;
+import com.dt.psychology.presenter.activitis.AskQuestionPresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.LoginPresenter;
 import com.dt.psychology.presenter.activitis.LoginPresenterImpl;
 import com.dt.psychology.presenter.activitis.LoginPresenterImpl_Factory;
@@ -40,6 +49,8 @@ import com.dt.psychology.presenter.activitis.SignUpPresenter;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_Factory;
 import com.dt.psychology.presenter.activitis.SignUpPresenterImpl_MembersInjector;
+import com.dt.psychology.presenter.activitis.WriteCommentPresenter;
+import com.dt.psychology.presenter.activitis.WriteCommentPresenterImpl_Factory;
 import com.dt.psychology.presenter.fragments.DiscussionFPresenter;
 import com.dt.psychology.presenter.fragments.DiscussionFPresenterImpl;
 import com.dt.psychology.presenter.fragments.DiscussionFPresenterImpl_Factory;
@@ -53,16 +64,23 @@ import com.dt.psychology.presenter.fragments.PersonalFPresenterImpl_Factory;
 import com.dt.psychology.ui.MyApplication;
 import com.dt.psychology.ui.MyApplication_MembersInjector;
 import com.dt.psychology.ui.activities.AnswersActivity;
+import com.dt.psychology.ui.activities.AnswersActivity_MembersInjector;
 import com.dt.psychology.ui.activities.ArticleActivity;
 import com.dt.psychology.ui.activities.ArticleActivity_MembersInjector;
 import com.dt.psychology.ui.activities.ArticleDetailActivity;
+import com.dt.psychology.ui.activities.AskQuestionActivity;
+import com.dt.psychology.ui.activities.AskQuestionActivity_MembersInjector;
 import com.dt.psychology.ui.activities.EditDataActivity;
 import com.dt.psychology.ui.activities.LoginActivity;
 import com.dt.psychology.ui.activities.LoginActivity_MembersInjector;
 import com.dt.psychology.ui.activities.MainActivity;
+import com.dt.psychology.ui.activities.MyCollectionsActivity;
+import com.dt.psychology.ui.activities.MyCollectionsActivity_MembersInjector;
 import com.dt.psychology.ui.activities.SignUpActivity;
 import com.dt.psychology.ui.activities.SignUpActivity_MembersInjector;
 import com.dt.psychology.ui.activities.SplashActivity;
+import com.dt.psychology.ui.activities.WriteCommentActivity;
+import com.dt.psychology.ui.activities.WriteCommentActivity_MembersInjector;
 import com.dt.psychology.ui.fragments.DiscussionFragment;
 import com.dt.psychology.ui.fragments.DiscussionFragment_MembersInjector;
 import com.dt.psychology.ui.fragments.HomeFragment;
@@ -201,6 +219,14 @@ public final class DaggerAppComponent implements AppComponent {
 
     private MembersInjector<LoginActivity> loginActivityMembersInjector;
 
+    private MembersInjector<AnswerPresenterImpl> answerPresenterImplMembersInjector;
+
+    private Provider<AnswerPresenterImpl> answerPresenterImplProvider;
+
+    private Provider<AnswerPresenter> provideAnswerPresenterImplProvider;
+
+    private MembersInjector<AnswersActivity> answersActivityMembersInjector;
+
     private Provider<Context> provideActivityContextProvider;
 
     private MembersInjector<SignUpPresenterImpl> signUpPresenterImplMembersInjector;
@@ -210,6 +236,16 @@ public final class DaggerAppComponent implements AppComponent {
     private Provider<SignUpPresenter> provideSignUpPresenterImplProvider;
 
     private MembersInjector<SignUpActivity> signUpActivityMembersInjector;
+
+    private Provider<AskQuestionPresenter> provideAskQuestionPresenterImplProvider;
+
+    private MembersInjector<AskQuestionActivity> askQuestionActivityMembersInjector;
+
+    private Provider<WriteCommentPresenter> provideWriteCommentPresenterImplProvider;
+
+    private MembersInjector<WriteCommentActivity> writeCommentActivityMembersInjector;
+
+    private MembersInjector<MyCollectionsActivity> myCollectionsActivityMembersInjector;
 
     private ActivityComponentImpl(ActivityModule activityModule) {
       this.activityModule = Preconditions.checkNotNull(activityModule);
@@ -256,6 +292,21 @@ public final class DaggerAppComponent implements AppComponent {
       this.loginActivityMembersInjector =
           LoginActivity_MembersInjector.create(provideLoginPresenterImplProvider);
 
+      this.answerPresenterImplMembersInjector =
+          AnswerPresenterImpl_MembersInjector.create(
+              DaggerAppComponent.this.provideQAndAServiceProvider);
+
+      this.answerPresenterImplProvider =
+          AnswerPresenterImpl_Factory.create(answerPresenterImplMembersInjector);
+
+      this.provideAnswerPresenterImplProvider =
+          DoubleCheck.provider(
+              ActivityModule_ProvideAnswerPresenterImplFactory.create(
+                  activityModule, answerPresenterImplProvider));
+
+      this.answersActivityMembersInjector =
+          AnswersActivity_MembersInjector.create(provideAnswerPresenterImplProvider);
+
       this.provideActivityContextProvider =
           DoubleCheck.provider(ActivityModule_ProvideActivityContextFactory.create(activityModule));
 
@@ -273,6 +324,26 @@ public final class DaggerAppComponent implements AppComponent {
 
       this.signUpActivityMembersInjector =
           SignUpActivity_MembersInjector.create(provideSignUpPresenterImplProvider);
+
+      this.provideAskQuestionPresenterImplProvider =
+          DoubleCheck.provider(
+              ActivityModule_ProvideAskQuestionPresenterImplFactory.create(
+                  activityModule, AskQuestionPresenterImpl_Factory.create()));
+
+      this.askQuestionActivityMembersInjector =
+          AskQuestionActivity_MembersInjector.create(provideAskQuestionPresenterImplProvider);
+
+      this.provideWriteCommentPresenterImplProvider =
+          DoubleCheck.provider(
+              ActivityModule_ProvideWriteCommentPresenterImplFactory.create(
+                  activityModule, WriteCommentPresenterImpl_Factory.create()));
+
+      this.writeCommentActivityMembersInjector =
+          WriteCommentActivity_MembersInjector.create(provideWriteCommentPresenterImplProvider);
+
+      this.myCollectionsActivityMembersInjector =
+          MyCollectionsActivity_MembersInjector.create(
+              DaggerAppComponent.this.provideArticleServiceProvider);
     }
 
     @Override
@@ -292,7 +363,7 @@ public final class DaggerAppComponent implements AppComponent {
 
     @Override
     public void inject(AnswersActivity answersActivity) {
-      MembersInjectors.<AnswersActivity>noOp().injectMembers(answersActivity);
+      answersActivityMembersInjector.injectMembers(answersActivity);
     }
 
     @Override
@@ -313,6 +384,21 @@ public final class DaggerAppComponent implements AppComponent {
     @Override
     public void inject(SplashActivity splashActivity) {
       MembersInjectors.<SplashActivity>noOp().injectMembers(splashActivity);
+    }
+
+    @Override
+    public void inject(AskQuestionActivity askQuestionActivity) {
+      askQuestionActivityMembersInjector.injectMembers(askQuestionActivity);
+    }
+
+    @Override
+    public void inject(WriteCommentActivity writeCommentActivity) {
+      writeCommentActivityMembersInjector.injectMembers(writeCommentActivity);
+    }
+
+    @Override
+    public void inject(MyCollectionsActivity myCollectionsActivity) {
+      myCollectionsActivityMembersInjector.injectMembers(myCollectionsActivity);
     }
 
     @Override

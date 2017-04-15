@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.dt.psychology.R;
 import com.dt.psychology.domain.Question;
+import com.dt.psychology.domain.QuestionTag;
 import com.dt.psychology.ui.activities.AnswersActivity;
 
 import java.util.ArrayList;
@@ -25,10 +26,33 @@ import butterknife.BindView;
 public class QuestionRcvAdapter extends FooterAdapter<QuestionRcvAdapter.QuestionItemViewHolder> {
 
     private List<Question> questions;
+    private List<Question> cache;
 
     public QuestionRcvAdapter(List<Question> questions){
         if (questions == null)  questions = new ArrayList<>();
         this.questions = questions;
+        cache = questions;
+    }
+
+    public void setQuestions(List<Question> questions){
+        this.questions = questions;
+        notifyDataSetChanged();
+    }
+
+    public void restore(){
+        questions = cache;
+        notifyDataSetChanged();
+    }
+
+    public void reset(){
+        questions.clear();
+        setFooterStatus(FOOTER_HIDING);
+        notifyDataSetChanged();
+    }
+
+    public void save(){
+        cache = questions;
+        questions = new ArrayList<>();
     }
 
     public List<Question> getQuestions(){
@@ -48,16 +72,22 @@ public class QuestionRcvAdapter extends FooterAdapter<QuestionRcvAdapter.Questio
 
     @Override
     public void itemBindViewHolder(QuestionItemViewHolder holder, int position) {
-        Question question = questions.get(position);
-        holder.tvAuthorTime.setText("匿名用户     01-31");
-        holder.tvContent.setText("以前个给同事留下了不好的印象，形成不好的互动模式，容易被人误会，容易被人忽悠利用，工作上常常不得已加班，下班后休息严重不足。长期如此导致自控力，判断力，行动力下降。陷入恶性循环，我怎样改善这种局面？");
-        holder.tvTitle.setText("如何改善人际互动模式");
-        holder.tvTag.setText("工作与生活平衡 职场人际 职场压力");
-        holder.tvAnswerCount.setText("1");
+        final Question question = questions.get(position);
+        holder.tvAuthorTime.setText(question.getUser().getAlias());
+        holder.tvContent.setText(question.getContent());
+        holder.tvTitle.setText(question.getTitle());
+        holder.tvAnswerCount.setText(String.valueOf(question.getAplyCount()));
+        if (question.getQuestionTags()!=null){
+            for (QuestionTag tag: question.getQuestionTags()){
+                holder.tvTag.append(tag.getQuestionTagName()+" ");
+            }
+        }
         holder.cslQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.getContext().startActivity(new Intent(v.getContext(), AnswersActivity.class));
+                Intent intent = new Intent(v.getContext(),AnswersActivity.class);
+                intent.putExtra("question",question);
+                v.getContext().startActivity(intent);
             }
         });
     }

@@ -4,13 +4,17 @@ import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 
 import java.io.Serializable;
+import java.util.List;
+
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.ToMany;
 
 /**
  * @author 
  */
 @Entity
 public class User implements Serializable {
+    private static final long serialVersionUID = 7488991692987599847L;
     /**
      * 用户id号
      */
@@ -59,7 +63,11 @@ public class User implements Serializable {
 
     private String password;
 
-    private static final long serialVersionUID = 1L;
+//    @ToMany(referencedJoinProperty = "questionId")
+//    List<Question> myQuestions;
+//
+//    @ToMany(referencedJoinProperty = "commentId")
+//    List<Comment> myComments;
 
     public User() {}
 

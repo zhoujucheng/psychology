@@ -76,7 +76,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/fragment_discussion_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/fragment_discussion_toolbar"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/fragment_discussion_srfly"
@@ -96,13 +97,14 @@
     </android.support.v4.widget.SwipeRefreshLayout>
 
 
-
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fragment_discussion_ask_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp" />
+        android:src="@drawable/feedback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

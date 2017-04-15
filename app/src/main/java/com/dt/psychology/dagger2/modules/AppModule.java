@@ -117,13 +117,13 @@ public class AppModule {
 //                    }
 //                }).create();
         Gson gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd HH:mm:ss")
-//                .registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
-//                    @Override
-//                    public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-//                        return new Date(json.getAsJsonPrimitive().getAsLong());
-//                    }
-//                })
+//                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                .registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
+                    @Override
+                    public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+                        return new Date(json.getAsJsonPrimitive().getAsLong());
+                    }
+                })
                 .create();
         return new Retrofit.Builder()
                 .baseUrl(MyApplication.BASE_URL)

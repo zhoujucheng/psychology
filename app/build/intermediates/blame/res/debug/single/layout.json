@@ -60,6 +60,10 @@
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my_answers.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_my_answers.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
@@ -90,6 +94,10 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_dump_toast.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\aa9782d7366758c56c1b8e49c8918b897f9a0ea9\\output\\res\\layout\\leak_canary_heap_dump_toast.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_write_comment.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_write_comment.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
@@ -128,8 +136,16 @@
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\c5594070238649ca63950e40407d0af0d31b7b2e\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my_collections.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_my_collections.xml"
+    },
+    {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_answer_detail.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_answer_detail.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
@@ -206,6 +222,10 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ask_question.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_ask_question.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
@@ -290,6 +310,10 @@
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "D:\\solfware\\android\\AVD\\.android\\build-cache\\571c99a435936449d4578af8abd10b4a911a48e6\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my_questions.xml",
+        "source": "D:\\sources\\andorid\\Psychology\\app\\src\\main\\res\\layout\\activity_my_questions.xml"
     },
     {
         "merged": "D:\\sources\\andorid\\Psychology\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",

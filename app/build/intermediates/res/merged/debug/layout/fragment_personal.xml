@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.3">
 
         <LinearLayout
-            android:id="@+id/linearlayout0"
+            android:id="@+id/fragment_personal_lly_my_questions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/personalLinear"
@@ -68,10 +68,10 @@
             android:background="@color/colorDividedLine"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout0" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_personal_lly_my_questions" />
 
         <LinearLayout
-            android:id="@+id/linearlayout1"
+            android:id="@+id/fragment_personal_lly_my_answers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/personalLinear"
@@ -86,10 +86,11 @@
                 app:srcCompat="@drawable/my_discussions" />
 
             <TextView
+                android:id="@+id/fragment_personal_lly_my_answers"
                 style="@style/personalTexView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="我的讨论" />
+                android:text="我的回答" />
         </LinearLayout>
 
         <View
@@ -99,10 +100,10 @@
             android:background="@color/colorDividedLine"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout1" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_personal_lly_my_answers" />
 
         <LinearLayout
-            android:id="@+id/linearlayout2"
+            android:id="@+id/fragment_personal_lly_my_collections"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/personalLinear"
@@ -130,10 +131,10 @@
             android:background="@color/colorDividedLine"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_personal_lly_my_collections" />
 
         <LinearLayout
-            android:id="@+id/linearlayout3"
+            android:id="@+id/fragment_personal_lly_feedback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/personalLinear"
@@ -161,13 +162,13 @@
             android:background="@color/colorDividedLine"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_personal_lly_feedback" />
 
         <LinearLayout
-            android:id="@+id/linearlayout4"
+            android:id="@+id/fragment_personal_lly_setting"
+            style="@style/personalLinear"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            style="@style/personalLinear"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view3">

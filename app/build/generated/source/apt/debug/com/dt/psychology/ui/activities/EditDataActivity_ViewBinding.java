@@ -14,7 +14,7 @@ import java.lang.Override;
 public class EditDataActivity_ViewBinding implements Unbinder {
   private EditDataActivity target;
 
-  private View view2131624072;
+  private View view2131624085;
 
   @UiThread
   public EditDataActivity_ViewBinding(EditDataActivity target) {
@@ -27,7 +27,7 @@ public class EditDataActivity_ViewBinding implements Unbinder {
 
     View view;
     view = Utils.findRequiredView(source, R.id.activity_edit_data_iv_back, "method 'backClick'");
-    view2131624072 = view;
+    view2131624085 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -43,7 +43,7 @@ public class EditDataActivity_ViewBinding implements Unbinder {
     target = null;
 
 
-    view2131624072.setOnClickListener(null);
-    view2131624072 = null;
+    view2131624085.setOnClickListener(null);
+    view2131624085 = null;
   }
 }

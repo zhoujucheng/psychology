@@ -9,10 +9,10 @@ import org.greenrobot.greendao.annotation.Generated;
 /**
  * @author 
  */
-@Entity
 public class AttachQuestionTag implements Serializable {
 
-    @Id(autoincrement = true)
+    private static final long serialVersionUID = 4537952872373166320L;
+
     private Long id;
 
     /**
@@ -25,17 +25,14 @@ public class AttachQuestionTag implements Serializable {
      */
     private long questionTagId;
 
-    private static final long serialVersionUID = 1L;
+    public AttachQuestionTag() {}
 
-    @Generated(hash = 1998382669)
-    public AttachQuestionTag(Long id, Long questionId, long questionTagId) {
-        this.id = id;
-        this.questionId = questionId;
-        this.questionTagId = questionTagId;
+    public Long getId() {
+        return id;
     }
 
-    @Generated(hash = 2116607867)
-    public AttachQuestionTag() {
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getQuestionId() {
@@ -52,13 +49,5 @@ public class AttachQuestionTag implements Serializable {
 
     public void setQuestionTagId(long questionTagId) {
         this.questionTagId = questionTagId;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }
